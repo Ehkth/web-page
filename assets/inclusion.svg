@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-labelledby="incTitle incDesc">
+  <title id="incTitle">Niños y niñas alrededor del mundo</title>
+  <desc id="incDesc">Cinco estudiantes diversos sostienen un globo terráqueo con un corazón.</desc>
+
+  <rect width="320" height="320" rx="26" fill="#eef7ff"/>
+  <circle cx="160" cy="152" r="132" fill="#ffffff" opacity=".55"/>
+
+  <!-- Globo terráqueo -->
+  <circle cx="160" cy="140" r="68" fill="#a9d3f2" stroke="#8fc3ea" stroke-width="3"/>
+  <path d="M112 106 q18 -18 40 -10 q16 6 8 22 q-10 18 -26 16 q-20 -2 -22 -28z" fill="#9ed8b4"/>
+  <path d="M180 154 q18 -8 30 6 q10 14 -4 24 q-16 10 -26 -2 q-10 -14 0 -28z" fill="#9ed8b4"/>
+  <path d="M104 168 q14 -2 16 12 q2 16 -10 20 q-12 2 -14 -14 q-2 -14 8 -18z" fill="#9ed8b4"/>
+  <ellipse cx="160" cy="140" rx="68" ry="26" fill="none" stroke="#ffffff" stroke-opacity=".5" stroke-width="2"/>
+  <ellipse cx="160" cy="140" rx="28" ry="68" fill="none" stroke="#ffffff" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M96 172 q64 28 128 0" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>
+
+  <!-- Corazón -->
+  <path d="M252 96 C 242 86, 234 80, 236 72 C 238 65, 247 63, 252 70 C 257 63, 266 65, 268 72 C 270 80, 262 86, 252 96 Z"
+        fill="#f4a3b5" stroke="#e98299" stroke-width="2"/>
+
+  <!-- Estrellas -->
+  <path d="M58 70 l2.5 7 7 2.5 -7 2.5 -2.5 7 -2.5 -7 -7 -2.5 7 -2.5z" fill="#f2c94c"/>
+  <path d="M274 148 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" fill="#eda172"/>
+  <circle cx="46" cy="186" r="4" fill="#a48fdd"/>
+  <circle cx="286" cy="210" r="4" fill="#78c29a"/>
+
+  <!-- Suelo -->
+  <ellipse cx="160" cy="298" rx="128" ry="18" fill="#dff1e6"/>
+
+  <!-- Estudiante 1 -->
+  <g>
+    <ellipse cx="50" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <ellipse cx="62" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <rect x="42" y="255" width="28" height="34" rx="12" fill="#79aede"/>
+    <circle cx="56" cy="242" r="15" fill="#4a3226"/>
+    <circle cx="56" cy="245" r="13" fill="#f1c7a5"/>
+    <circle cx="51" cy="244" r="1.4" fill="#3a3244"/>
+    <circle cx="61" cy="244" r="1.4" fill="#3a3244"/>
+    <path d="M51 251 q5 4 10 0" fill="none" stroke="#a9604f" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Estudiante 2 -->
+  <g>
+    <ellipse cx="102" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <ellipse cx="114" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <rect x="94" y="255" width="28" height="34" rx="12" fill="#f2c94c"/>
+    <circle cx="108" cy="242" r="15" fill="#2e2a2a"/>
+    <circle cx="108" cy="245" r="13" fill="#a9683f"/>
+    <circle cx="103" cy="244" r="1.4" fill="#241f1f"/>
+    <circle cx="113" cy="244" r="1.4" fill="#241f1f"/>
+    <path d="M103 251 q5 4 10 0" fill="none" stroke="#7d3f2c" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Estudiante 3 -->
+  <g>
+    <ellipse cx="154" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <ellipse cx="166" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <rect x="146" y="255" width="28" height="34" rx="12" fill="#78c29a"/>
+    <circle cx="160" cy="241" r="16" fill="#a48fdd"/>
+    <circle cx="160" cy="245" r="13" fill="#e8b48c"/>
+    <circle cx="155" cy="244" r="1.4" fill="#3a3244"/>
+    <circle cx="165" cy="244" r="1.4" fill="#3a3244"/>
+    <path d="M155 251 q5 4 10 0" fill="none" stroke="#a9604f" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Estudiante 4 -->
+  <g>
+    <ellipse cx="206" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <ellipse cx="218" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <rect x="198" y="255" width="28" height="34" rx="12" fill="#eda172"/>
+    <circle cx="212" cy="242" r="15" fill="#6b4a2f"/>
+    <circle cx="212" cy="245" r="13" fill="#7a4a2b"/>
+    <circle cx="207" cy="244" r="1.4" fill="#241f1f"/>
+    <circle cx="217" cy="244" r="1.4" fill="#241f1f"/>
+    <path d="M207 251 q5 4 10 0" fill="none" stroke="#4a2a1c" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Estudiante 5 -->
+  <g>
+    <ellipse cx="258" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <ellipse cx="270" cy="292" rx="5" ry="3" fill="#46506e"/>
+    <rect x="250" y="255" width="28" height="34" rx="12" fill="#a48fdd"/>
+    <circle cx="264" cy="242" r="15" fill="#d9a441"/>
+    <circle cx="264" cy="245" r="13" fill="#f6d3b3"/>
+    <circle cx="259" cy="244" r="1.4" fill="#3a3244"/>
+    <circle cx="269" cy="244" r="1.4" fill="#3a3244"/>
+    <path d="M259 251 q5 4 10 0" fill="none" stroke="#a9604f" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+</svg>

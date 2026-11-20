@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" width="520" height="400" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">Estudiantes diversos con un corazón</title>
+  <desc id="heroDesc">Cuatro niños y niñas de diferentes tonos de piel y peinados sonríen tomados de la mano bajo un corazón.</desc>
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9f4fd"/>
+      <stop offset="1" stop-color="#fff7dd"/>
+    </linearGradient>
+    <linearGradient id="heartG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f9bcc8"/>
+      <stop offset="1" stop-color="#ef93a8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="520" height="400" rx="30" fill="url(#sky)"/>
+  <circle cx="448" cy="70" r="44" fill="#ffe08a" opacity=".28"/>
+  <circle cx="448" cy="70" r="30" fill="#ffe08a"/>
+  <g fill="#ffffff" opacity=".92">
+    <ellipse cx="96" cy="80" rx="40" ry="18"/>
+    <ellipse cx="128" cy="72" rx="26" ry="16"/>
+    <ellipse cx="70" cy="72" rx="22" ry="14"/>
+  </g>
+
+  <!-- Confeti -->
+  <g opacity=".85">
+    <circle cx="60" cy="150" r="5" fill="#a48fdd"/>
+    <circle cx="480" cy="150" r="4" fill="#78c29a"/>
+    <circle cx="470" cy="220" r="5" fill="#f2c94c"/>
+    <circle cx="46" cy="230" r="4" fill="#eda172"/>
+    <path d="M420 118 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" fill="#f2c94c"/>
+    <path d="M72 120 l2.5 7 7 2.5 -7 2.5 -2.5 7 -2.5 -7 -7 -2.5 7 -2.5z" fill="#79aede"/>
+  </g>
+
+  <!-- Suelo -->
+  <ellipse cx="260" cy="352" rx="226" ry="30" fill="#dcf0e5"/>
+  <ellipse cx="260" cy="360" rx="180" ry="18" fill="#cde8da" opacity=".7"/>
+
+  <!-- Corazón -->
+  <path d="M260 170 C 230 145, 210 128, 214 108 C 217 92, 236 86, 248 96 C 254 101, 258 106, 260 111 C 262 106, 266 101, 272 96 C 284 86, 303 92, 306 108 C 310 128, 290 145, 260 170 Z"
+        fill="url(#heartG)" stroke="#e98299" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="239" cy="108" rx="9" ry="5" fill="#ffffff" opacity=".55" transform="rotate(-24 239 108)"/>
+
+  <!-- Brazos que se sostienen -->
+  <g fill="none" stroke-width="10" stroke-linecap="round">
+    <path d="M128 278 Q 150 294 168 284" stroke="#f1c7a5"/>
+    <path d="M196 278 Q 180 294 168 284" stroke="#a9683f"/>
+    <path d="M244 274 Q 258 292 272 284" stroke="#a9683f"/>
+    <path d="M300 274 Q 286 292 272 284" stroke="#e8b48c"/>
+    <path d="M348 280 Q 364 294 380 285" stroke="#e8b48c"/>
+    <path d="M400 282 Q 388 294 380 285" stroke="#7a4a2b"/>
+  </g>
+  <circle cx="168" cy="284" r="7" fill="#c98a5f"/>
+  <circle cx="272" cy="284" r="7" fill="#c98a5f"/>
+  <circle cx="380" cy="285" r="7" fill="#b07a55"/>
+
+  <!-- Niño 1 -->
+  <g>
+    <rect x="98" y="334" width="11" height="24" rx="5" fill="#46506e"/>
+    <rect x="113" y="334" width="11" height="24" rx="5" fill="#46506e"/>
+    <ellipse cx="103" cy="360" rx="10" ry="5" fill="#2f3850"/>
+    <ellipse cx="119" cy="360" rx="10" ry="5" fill="#2f3850"/>
+    <rect x="84" y="256" width="52" height="86" rx="24" fill="#79aede"/>
+    <path d="M98 262 q12 8 24 0" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+    <circle cx="110" cy="229" r="29" fill="#4a3226"/>
+    <circle cx="110" cy="234" r="25" fill="#f1c7a5"/>
+    <circle cx="102" cy="231" r="2.6" fill="#3a3244"/>
+    <circle cx="118" cy="231" r="2.6" fill="#3a3244"/>
+    <path d="M101 240 q9 7 18 0" fill="none" stroke="#a9604f" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Niño 2 -->
+  <g>
+    <rect x="199" y="338" width="11" height="24" rx="5" fill="#46506e"/>
+    <rect x="219" y="338" width="11" height="24" rx="5" fill="#46506e"/>
+    <ellipse cx="204" cy="364" rx="10" ry="5" fill="#2f3850"/>
+    <ellipse cx="225" cy="364" rx="10" ry="5" fill="#2f3850"/>
+    <rect x="183" y="232" width="64" height="108" rx="28" fill="#f2c94c"/>
+    <path d="M203 238 q12 8 24 0" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+    <circle cx="215" cy="203" r="32" fill="#2e2a2a"/>
+    <circle cx="215" cy="208" r="28" fill="#a9683f"/>
+    <circle cx="193" cy="187" r="12" fill="#2e2a2a"/>
+    <circle cx="215" cy="181" r="14" fill="#2e2a2a"/>
+    <circle cx="237" cy="187" r="12" fill="#2e2a2a"/>
+    <circle cx="206" cy="205" r="2.8" fill="#241f1f"/>
+    <circle cx="224" cy="205" r="2.8" fill="#241f1f"/>
+    <path d="M205 215 q10 8 20 0" fill="none" stroke="#7d3f2c" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Niño 3 -->
+  <g>
+    <rect x="304" y="338" width="11" height="24" rx="5" fill="#46506e"/>
+    <rect x="324" y="338" width="11" height="24" rx="5" fill="#46506e"/>
+    <ellipse cx="309" cy="364" rx="10" ry="5" fill="#2f3850"/>
+    <ellipse cx="330" cy="364" rx="10" ry="5" fill="#2f3850"/>
+    <rect x="288" y="236" width="64" height="104" rx="28" fill="#78c29a"/>
+    <path d="M308 242 q12 8 24 0" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+    <circle cx="320" cy="201" r="33" fill="#a48fdd"/>
+    <circle cx="320" cy="207" r="26" fill="#e8b48c"/>
+    <path d="M292 199 q28 -20 56 0" fill="none" stroke="#b9a8ea" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="311" cy="206" r="2.6" fill="#3a3244"/>
+    <circle cx="329" cy="206" r="2.6" fill="#3a3244"/>
+    <path d="M310 216 q10 8 20 0" fill="none" stroke="#a9604f" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Niño 4 -->
+  <g>
+    <rect x="408" y="334" width="11" height="24" rx="5" fill="#46506e"/>
+    <rect x="423" y="334" width="11" height="24" rx="5" fill="#46506e"/>
+    <ellipse cx="413" cy="360" rx="10" ry="5" fill="#2f3850"/>
+    <ellipse cx="429" cy="360" rx="10" ry="5" fill="#2f3850"/>
+    <rect x="394" y="260" width="52" height="82" rx="24" fill="#eda172"/>
+    <path d="M408 266 q12 8 24 0" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+    <circle cx="420" cy="231" r="27" fill="#6b4a2f"/>
+    <circle cx="420" cy="236" r="23" fill="#7a4a2b"/>
+    <circle cx="411" cy="235" r="7.5" fill="none" stroke="#2b3245" stroke-width="2"/>
+    <circle cx="429" cy="235" r="7.5" fill="none" stroke="#2b3245" stroke-width="2"/>
+    <path d="M418.5 235 h3" stroke="#2b3245" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="411" cy="235" r="2" fill="#241f1f"/>
+    <circle cx="429" cy="235" r="2" fill="#241f1f"/>
+    <path d="M411 246 q9 7 18 0" fill="none" stroke="#4a2a1c" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+</svg>
