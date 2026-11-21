@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fbfaf6">
+<meta name="description" content="Interactive English learning page (Pre-A1 / A1) about respect, diversity and inclusion for primary school students.">
+<title>Respect Starts With Us · English for Primary School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+
+<div class="app">
+  <!-- ================= NAVIGATION PANEL ================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Section menu">
+    <div class="brand">
+      <span class="brand-logo" aria-hidden="true">🤝</span>
+      <div>
+        <div class="brand-title">Respect Starts<br>With Us</div>
+        <div class="brand-sub">English · A1</div>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav" aria-label="Page sections">
+      <noscript><p class="small">Turn on JavaScript to navigate the sections.</p></noscript>
+    </nav>
+
+    <div class="progress-card">
+      <h3 id="progress-title">Your progress</h3>
+      <div class="bar" id="progress-track" role="progressbar" aria-labelledby="progress-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span id="progress-bar"></span>
+      </div>
+      <div class="progress-meta">
+        <span id="progress-text">1 of 11 sections</span>
+        <span id="progress-percent">0%</span>
+      </div>
+    </div>
+
+    <p class="sidebar-foot">Educational prototype · UNAD<br>Technology in Foreign Language Teaching</p>
+  </aside>
+
+  <div class="scrim" id="scrim"></div>
+
+  <div class="main">
+    <!-- ================= TOP BAR ================= -->
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn" type="button" aria-controls="sidebar" aria-expanded="false">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+      <div class="topbar-title-wrap">
+        <span class="topbar-kicker">Respect Starts With Us</span>
+        <h2 class="topbar-title" id="topbar-title">Home</h2>
+      </div>
+      <span class="topbar-progress" id="progress-count" aria-hidden="true">0%</span>
+    </header>
+
+    <main class="content" id="content">
+      <!-- ================= 01 · HOME ================= -->
+      <section class="panel is-active" id="panel-inicio" aria-hidden="false">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="tag"><span class="tag-en" aria-hidden="true">EN</span> English · Pre-A1 / A1 · Reading &amp; Speaking</span>
+            <h1>Respect Starts With Us</h1>
+            <p class="hero-sub">Respect begins with us.</p>
+            <p class="lead">Learn English and build inclusion. Discover new words and find out how to make everyone feel welcome, safe and happy.</p>
+            <div class="hero-actions">
+              <button type="button" class="btn" data-go="infografia">Start the adventure →</button>
+              <button type="button" class="btn ghost" data-go="mapa">See the mind map</button>
+            </div>
+            <div class="hero-chips">
+              <span class="chip blue">6 key words</span>
+              <span class="chip yellow">5 missions</span>
+              <span class="chip green">3 readings</span>
+              <span class="chip lilac">1 badge</span>
+            </div>
+          </div>
+          <div class="hero-art">
+            <img src="assets/hero.svg" alt="Illustration of four diverse students smiling together with a heart." width="520" height="400" onerror="this.style.display='none';this.parentElement.classList.add('is-fallback');">
+            <span class="art-fallback" aria-hidden="true">🤝💛</span>
+          </div>
+        </div>
+
+        <div class="grid grid-3 mt-3">
+          <article class="card">
+            <div class="icon-bubble" aria-hidden="true">🎯</div>
+            <h3>Your mission</h3>
+            <p>Recognise respect and bullying in short situations, and suggest an inclusive answer in English.</p>
+          </article>
+          <article class="card">
+            <div class="icon-bubble" aria-hidden="true">💪</div>
+            <h3>Your superpowers</h3>
+            <p><b>Reading:</b> understand short stories.<br><b>Speaking:</b> say kind and safe sentences.</p>
+          </article>
+          <article class="card">
+            <div class="icon-bubble" aria-hidden="true">🧭</div>
+            <h3>How to use this page</h3>
+            <p>Choose a section in the menu, explore, practise and complete the Escape Room. Your progress is saved automatically.</p>
+          </article>
+        </div>
+
+        <div class="route mt-3">
+          <span class="route-title">Learning path</span>
+          <div class="route-steps">
+            <span class="route-step">1. Explore</span>
+            <span class="route-arrow" aria-hidden="true">→</span>
+            <span class="route-step">2. Learn</span>
+            <span class="route-arrow" aria-hidden="true">→</span>
+            <span class="route-step">3. Practise</span>
+            <span class="route-arrow" aria-hidden="true">→</span>
+            <span class="route-step">4. Play</span>
+            <span class="route-arrow" aria-hidden="true">→</span>
+            <span class="route-step">5. Reflect</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 02 · INFOGRAPHIC ================= -->
+      <section class="panel" id="panel-infografia" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">01 · Infographic</span>
+          <h2>Stop bullying, start respect</h2>
+          <p class="lead">Bullying is repeated hurtful behaviour. Learn to recognise it and to answer with respect.</p>
+        </div>
+
+        <figure class="media-figure">
+          <img src="images/infographic.png" alt="Infographic about bullying: physical, verbal, social and online bullying, with four respectful actions we can take." width="1536" height="1024" loading="lazy" decoding="async">
+          <figcaption><b>Infographic.</b> Four types of bullying and four things we can do about it.</figcaption>
+        </figure>
+
+        <div class="grid grid-4 mt-3">
+          <article class="card type-card orange">
+            <div class="icon-bubble" aria-hidden="true">✋</div>
+            <h3>Physical</h3>
+            <p>Hitting, pushing or kicking.</p>
+          </article>
+          <article class="card type-card yellow">
+            <div class="icon-bubble" aria-hidden="true">🗣️</div>
+            <h3>Verbal</h3>
+            <p>Name-calling, insults or laughing at someone.</p>
+          </article>
+          <article class="card type-card lilac">
+            <div class="icon-bubble" aria-hidden="true">👥</div>
+            <h3>Social</h3>
+            <p>Leaving someone out on purpose.</p>
+          </article>
+          <article class="card type-card blue">
+            <div class="icon-bubble" aria-hidden="true">🌐</div>
+            <h3>Online</h3>
+            <p>Sending or sharing hurtful messages.</p>
+          </article>
+        </div>
+
+        <div class="card tips-card mt-3">
+          <h3>What can we do?</h3>
+          <div class="grid grid-4">
+            <div class="tip"><span aria-hidden="true">💛</span><span>Be kind.</span></div>
+            <div class="tip"><span aria-hidden="true">🤝</span><span>Include others.</span></div>
+            <div class="tip"><span aria-hidden="true">🚫</span><span>Don't share hurtful messages.</span></div>
+            <div class="tip"><span aria-hidden="true">🙋</span><span>Ask a trusted adult.</span></div>
+          </div>
+        </div>
+
+        <div class="key-message mt-3">
+          <span class="emoji" aria-hidden="true">💛</span>
+          <div>
+            <b>Key message: Everyone deserves respect, safety and belonging.</b>
+            <span>Every child has the right to feel safe and included at school.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 03 · MIND MAP ================= -->
+      <section class="panel" id="panel-mapa" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">02 · Mind Map</span>
+          <h2>Respect and inclusion</h2>
+          <p class="lead">Look at the mind map, then tap a branch to discover an idea and a model sentence in English.</p>
+        </div>
+
+        <figure class="media-figure lilac">
+          <img src="images/mind_map.png" alt="Mind map of respect and inclusion with branches for empathy, diversity, equality, safe communication and help-seeking." width="1536" height="1024" loading="lazy" decoding="async">
+          <figcaption><b>Mind map.</b> Five big ideas that grow from respect and inclusion.</figcaption>
+        </figure>
+
+        <h3 class="mt-4">Explore the branches</h3>
+        <div class="map-wrap">
+          <div class="map-center"><span>RESPECT<br>&amp;<br>INCLUSION</span></div>
+          <div class="map-branches">
+            <button type="button" class="map-node" data-map="empathy">💗 Empathy</button>
+            <button type="button" class="map-node" data-map="diversity">🌍 Diversity</button>
+            <button type="button" class="map-node" data-map="equality">⚖️ Equality</button>
+            <button type="button" class="map-node" data-map="safe">💬 Safe communication</button>
+            <button type="button" class="map-node" data-map="help">🤝 Help-seeking</button>
+          </div>
+        </div>
+
+        <div class="card map-detail" id="map-detail" aria-live="polite"></div>
+        <p class="frame-line mt-3">“We are different, and we all deserve respect.”</p>
+      </section>
+
+      <!-- ================= 04 · VIDEO AND AUDIO ================= -->
+      <section class="panel" id="panel-vio" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">03 · Video and audio</span>
+          <h2>Watch, listen and remember</h2>
+          <p class="lead">Listen to the message, watch the video and discover the four key actions.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card audio-card">
+            <span class="pill">Listen</span>
+            <h3 class="mt-2">Listen and repeat</h3>
+            <p>Listen to the message and repeat the sentences out loud.</p>
+            <div class="audio-actions">
+              <button type="button" class="btn" data-speak="Respect means treating people with kindness. Include everyone. If you see bullying, do not join in. Help the person and tell a trusted adult.">▶ Play the message</button>
+              <button type="button" class="btn ghost" data-stop-speak>■ Stop</button>
+            </div>
+            <p class="script">“Respect means treating people with kindness. Include everyone. If you see bullying, do not join in. Help the person and tell a trusted adult.”</p>
+            <p class="small">The audio uses the voice of your browser. You can also ask your teacher to read the message out loud.</p>
+          </div>
+
+          <div class="card video-card">
+            <span class="pill">Watch</span>
+            <h3 class="mt-2">UNICEF #ENDviolence</h3>
+            <div class="video-frame mt-2">
+              <iframe src="https://www.youtube.com/embed/76hArsk3big" title="UNICEF video about kindness and anti-bullying" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="small">The teacher checks the video before using it in class. If it does not load when you open this file locally, <a href="https://www.youtube.com/watch?v=76hArsk3big" target="_blank" rel="noopener">watch it on YouTube ↗</a>.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-4 mt-3">
+          <div class="action-card stop">
+            <span class="big" aria-hidden="true">✋</span>
+            <h3>STOP</h3>
+            <p>Do not hurt.</p>
+          </div>
+          <div class="action-card help">
+            <span class="big" aria-hidden="true">💙</span>
+            <h3>HELP</h3>
+            <p>Support a classmate.</p>
+          </div>
+          <div class="action-card report">
+            <span class="big" aria-hidden="true">📣</span>
+            <h3>REPORT</h3>
+            <p>Tell a trusted adult.</p>
+          </div>
+          <div class="action-card include">
+            <span class="big" aria-hidden="true">🤗</span>
+            <h3>INCLUDE</h3>
+            <p>Invite everyone.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 05 · STUDY GUIDE ================= -->
+      <section class="panel" id="panel-guia" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">04 · Study guide</span>
+          <h2>Words, reading and speaking frames</h2>
+          <p class="lead">Flip the cards, read the story and use the model sentences to speak in English.</p>
+        </div>
+
+        <h3>Digital flashcards</h3>
+        <div class="flash-grid">
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">respect<small>tap to flip</small></span>
+              <span class="fc-face fc-back">treating people well<small>being kind to everyone</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">kind<small>tap to flip</small></span>
+              <span class="fc-face fc-back">friendly and caring<small>nice to other people</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">equal<small>tap to flip</small></span>
+              <span class="fc-face fc-back">having the same value<small>no one is better than anyone</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">include<small>tap to flip</small></span>
+              <span class="fc-face fc-back">make someone part of a group<small>invite them in</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">bully<small>tap to flip</small></span>
+              <span class="fc-face fc-back">a person who repeatedly hurts others<small>again and again</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">report<small>tap to flip</small></span>
+              <span class="fc-face fc-back">tell a responsible adult<small>ask for help</small></span>
+            </span>
+          </button>
+        </div>
+
+        <h3>Mini glossary</h3>
+        <div class="glossary">
+          <div class="gloss"><b>respect</b>treating people well</div>
+          <div class="gloss"><b>kind</b>friendly and caring</div>
+          <div class="gloss"><b>equal</b>having the same value</div>
+          <div class="gloss"><b>different</b>not the same</div>
+          <div class="gloss"><b>include</b>make someone part of the group</div>
+          <div class="gloss"><b>bully</b>hurt someone again and again</div>
+          <div class="gloss"><b>help</b>do something good for someone</div>
+          <div class="gloss"><b>report</b>tell a trusted adult</div>
+        </div>
+
+        <div class="card reading mt-3">
+          <div class="reading-head">
+            <h3>A New Student</h3>
+            <button type="button" class="btn ghost small-btn" data-speak="Mia is new at school. Some students do not invite her to play. Leo says: Come and play with us, Mia! The students make a team together. Mia feels welcome.">🔊 Listen to the story</button>
+          </div>
+          <p class="story">“Mia is new at school. Some students do not invite her to play. Leo says, ‘Come and play with us, Mia!’ The students make a team together. Mia feels welcome.”</p>
+          <button type="button" class="btn ghost" data-toggle="reading-answers" aria-expanded="false">Show questions and answers</button>
+          <div class="answers" id="reading-answers" hidden>
+            <ol>
+              <li>Who is new at school? <b>Mia.</b></li>
+              <li>What does Leo say? <b>“Come and play with us.”</b></li>
+              <li>How does Mia feel? <b>Welcome.</b></li>
+            </ol>
+          </div>
+        </div>
+
+        <h3 class="mt-4">Speaking frames</h3>
+        <p class="small">Tap a sentence to take it to the practice section and complete it.</p>
+        <div class="frames">
+          <button type="button" class="frame" data-frame="We should ______ because ______.">We should ______ because ______.</button>
+          <button type="button" class="frame" data-frame="We can help by ______.">We can help by ______.</button>
+          <button type="button" class="frame" data-frame="Everyone deserves ______.">Everyone deserves ______.</button>
+        </div>
+      </section>
+
+      <!-- ================= 06 · PRACTICE ================= -->
+      <section class="panel" id="panel-practica" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">05 · Interactive practice</span>
+          <h2>Show what you know</h2>
+          <p class="lead">Read each situation, choose the correct answer and get instant feedback.</p>
+        </div>
+
+        <div class="quiz-top">
+          <span class="pill">Reading practice · 3 questions</span>
+          <span class="score-chip" id="quiz-score" aria-live="polite">0 / 3 correct</span>
+        </div>
+
+        <div class="quiz-list" id="quiz-list"></div>
+        <p class="done-msg" id="quiz-done" aria-live="polite"></p>
+
+        <div class="row-actions mt-2">
+          <button type="button" class="btn ghost" id="quiz-reset">↺ Restart practice</button>
+        </div>
+
+        <div class="card speak-card mt-4">
+          <span class="pill">Speaking</span>
+          <h3 class="mt-2">Now say it in English</h3>
+          <p>Complete the sentence and read it out loud to your teacher or a classmate.</p>
+          <p class="frame-line">“We should ______ because ______.”</p>
+          <label class="field" for="speak">Your answer</label>
+          <textarea id="speak" rows="3" placeholder="We should include everyone because..."></textarea>
+          <div class="row-actions">
+            <button type="button" class="btn" id="speak-save">Save my answer</button>
+            <button type="button" class="btn ghost" id="speak-example">Show an example</button>
+          </div>
+          <p class="feedback" id="speak-fb" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- ================= 07 · SCENARIOS ================= -->
+      <section class="panel" id="panel-escenarios" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">06 · Scenarios</span>
+          <h2>What would you do?</h2>
+          <p class="lead">Read the situation, think of a respectful answer and then compare it with the suggestion.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card scenario">
+            <span class="emoji" aria-hidden="true">🙋</span>
+            <h3>A new classmate</h3>
+            <p>A new student is sitting alone at break. What can you say?</p>
+            <button type="button" class="btn ghost" data-reveal="sc-a" aria-expanded="false">Show a respectful answer</button>
+            <div class="reveal" id="sc-a" hidden>
+              <p>“Would you like to play with us?”</p>
+              <span>Invite the person to join. A simple invitation can change their day.</span>
+            </div>
+          </article>
+
+          <article class="card scenario">
+            <span class="emoji" aria-hidden="true">📱</span>
+            <h3>A hurtful online message</h3>
+            <p>A class group shares a mean message about someone. What should you do?</p>
+            <button type="button" class="btn ghost" data-reveal="sc-b" aria-expanded="false">Show a safe answer</button>
+            <div class="reveal" id="sc-b" hidden>
+              <p>Do not forward it. Save evidence if it is safe and tell a trusted adult.</p>
+              <span>Do not send the message to other people. Ask an adult for help.</span>
+            </div>
+          </article>
+
+          <article class="card scenario">
+            <span class="emoji" aria-hidden="true">🍽️</span>
+            <h3>Left out at lunch</h3>
+            <p>You see a classmate eating alone. What can you do?</p>
+            <button type="button" class="btn ghost" data-reveal="sc-c" aria-expanded="false">Show an inclusive answer</button>
+            <div class="reveal" id="sc-c" hidden>
+              <p>“Come and sit with us!”</p>
+              <span>Offer a place at your table. Inclusion starts with a small gesture.</span>
+            </div>
+          </article>
+
+          <article class="card scenario">
+            <span class="emoji" aria-hidden="true">💭</span>
+            <h3>You made a mistake</h3>
+            <p>You said something unkind and your classmate feels sad. What can you say?</p>
+            <button type="button" class="btn ghost" data-reveal="sc-d" aria-expanded="false">Show an honest answer</button>
+            <div class="reveal" id="sc-d" hidden>
+              <p>“I am sorry. I will not say that again.”</p>
+              <span>Saying sorry and changing your behaviour is also a form of respect.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= 08 · ESCAPE ROOM ================= -->
+      <section class="panel" id="panel-escape" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">07 · Gamified resource</span>
+          <h2>Unlocking Respect · Escape Room</h2>
+          <p class="lead">Complete the five missions, win your badge and become a Respect Hero.</p>
+        </div>
+
+        <div class="mission-meta">
+          <span class="pill" id="mission-label">Mission 1 of 5</span>
+          <div class="dots" id="dots" aria-hidden="true"></div>
+        </div>
+
+        <div class="card game-card" id="game"></div>
+
+        <h3 class="mt-4">Canva resources</h3>
+        <p class="small">Open the original materials in a new window. Click here to view each design.</p>
+
+        <div class="canva-actions">
+          <a class="canva-action escape" href="https://canva.link/3mvj96y41ey4zm0" target="_blank" rel="noopener">
+            <span class="canva-ico" aria-hidden="true">🔐</span>
+            <span class="canva-copy">
+              <span class="canva-title">Unlocking Respect</span>
+              <span class="canva-sub">Escape Room · 5 missions</span>
+              <span class="canva-cta">Click here to view ↗</span>
+            </span>
+          </a>
+
+          <a class="canva-action tree" href="https://canva.link/h22u44lhh1knjg7" target="_blank" rel="noopener">
+            <span class="canva-ico" aria-hidden="true">🌳</span>
+            <span class="canva-copy">
+              <span class="canva-title">Problem Tree</span>
+              <span class="canva-sub">Cause and effect</span>
+              <span class="canva-cta">Click here to view ↗</span>
+            </span>
+          </a>
+        </div>
+
+        <p class="small mt-3">Interactive version adapted from the Phase 2/3 materials. Original resources in Canva.</p>
+      </section>
+
+      <!-- ================= 09 · AI TOOLS ================= -->
+      <section class="panel" id="panel-ia" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">08 · AI tools</span>
+          <h2>Two AI tools for learning</h2>
+          <p class="lead">Two tools to practise reading and speaking with your teacher's support.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card tool-card chatgpt">
+            <span class="pill">AI tool 1 · Reading</span>
+            <h3 class="mt-2">ChatGPT</h3>
+            <p>Helps simplify fictional situations, explain vocabulary and create A1-level comprehension questions.</p>
+            <p class="prompt"><b>Suggested prompt:</b> “Rewrite this fictional classroom situation in very simple A1 English. Use 40 words and add three comprehension questions.”</p>
+            <a class="btn" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT ↗</a>
+          </article>
+
+          <article class="card tool-card copilot">
+            <span class="pill">AI tool 2 · Speaking</span>
+            <h3 class="mt-2">Microsoft Copilot</h3>
+            <p>Supervised role-play to practise respectful expressions and short answers.</p>
+            <p class="prompt"><b>Suggested prompt:</b> “Act as a friendly English practice partner for an A1 learner. Practise a short dialogue about including a new classmate. Use simple language and give gentle corrections.”</p>
+            <a class="btn" href="https://copilot.microsoft.com/" target="_blank" rel="noopener">Open Copilot ↗</a>
+          </article>
+        </div>
+
+        <div class="key-message mt-3">
+          <span class="emoji" aria-hidden="true">🛡️</span>
+          <div>
+            <b>Safe use</b>
+            <span>The teacher checks accuracy, age suitability and bias in AI output. Students never type names, photos, voices or personal data. There is always an option without AI.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 10 · REFLECTION ================= -->
+      <section class="panel" id="panel-reflexion" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">09 · Reflection</span>
+          <h2>My promise, my exit ticket</h2>
+          <p class="lead">Think of one concrete action and write your promise for this week.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>My promise</h3>
+            <p>What can you do to make everyone feel included?</p>
+            <label class="field" for="reflect-input">Your idea in English (it can be short)</label>
+            <textarea id="reflect-input" rows="3" placeholder="I can invite everyone to play..."></textarea>
+            <div class="row-actions">
+              <button type="button" class="btn" id="reflect-save">Save my promise</button>
+            </div>
+            <p class="feedback" id="reflect-fb" aria-live="polite"></p>
+            <div class="saved-note" id="reflect-saved" hidden></div>
+          </div>
+
+          <div class="card">
+            <h3>Exit ticket 🎟️</h3>
+            <p>Choose one new word and one respectful action you will practise.</p>
+            <label class="field" for="ticket-word">New English word</label>
+            <input type="text" id="ticket-word" placeholder="respect" autocomplete="off">
+            <label class="field" for="ticket-action">One action I will practise</label>
+            <input type="text" id="ticket-action" placeholder="Invite a classmate to play" autocomplete="off">
+            <div class="row-actions">
+              <button type="button" class="btn" id="ticket-submit">Hand in my ticket</button>
+            </div>
+            <div id="ticket-out" hidden></div>
+          </div>
+        </div>
+
+        <div class="card inclusion-banner mt-3">
+          <img src="assets/inclusion.svg" alt="Illustration of a globe surrounded by hands of different skin tones and a heart." width="320" height="320" onerror="this.style.display='none';this.parentElement.classList.add('is-fallback');">
+          <div>
+            <h3>We are different, and we all deserve respect.</h3>
+            <p>Talk to your teacher or a trusted adult if something worries you.</p>
+            <p class="small">You can answer with a sentence, a drawing or an oral explanation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 11 · TEACHER NOTES ================= -->
+      <section class="panel" id="panel-docente" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">10 · Teacher notes</span>
+          <h2>Teacher notes and learning approach</h2>
+          <p class="lead">Pedagogical guidance to adapt this page to your primary school group.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Pedagogical approach</h3>
+            <p>This page connects English practice with the student's real context. It draws on the principles of the <b>post-method approach</b>: practical communication, participation and relevance.</p>
+            <p><b>Universal Design for Learning (UDL)</b> is reflected in short text, visual organisation, oral modelling, written or spoken answer options and constant teacher support.</p>
+          </article>
+
+          <article class="card">
+            <h3>Suggested assessment</h3>
+            <ul class="checklist">
+              <li>Reading comprehension in the short situations.</li>
+              <li>Choosing safe and respectful answers.</li>
+              <li>Use of the target vocabulary (respect, include, kind...).</li>
+              <li>One inclusive proposal, spoken or written.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Adaptations</h3>
+            <ul class="checklist">
+              <li>Adjust the length of the readings and the time for each activity.</li>
+              <li>Read out loud and allow spoken answers or drawings.</li>
+              <li>Use the browser audio or record your own voice.</li>
+              <li>Check the video and external links before class.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Privacy and safety</h3>
+            <p>No personal data is requested. Reflection and exit-ticket answers are saved only in the student's browser (localStorage).</p>
+            <p class="small">AI tools are used under supervision and always have a no-technology alternative.</p>
+          </article>
+        </div>
+
+        <div class="key-message mt-3">
+          <span class="emoji" aria-hidden="true">🍎</span>
+          <div>
+            <b>Note for the teacher</b>
+            <span>This prototype is support material. Adapt the examples, language level and scaffolds to the real needs of your class.</span>
+          </div>
+        </div>
+      </section>
+
+
+
+      <nav class="pager" id="pager" aria-label="Navigation between sections"></nav>
+
+      <footer class="site-footer">
+        <p><b>Respect Starts With Us</b> · Learn English, build inclusion.</p>
+        <p>Educational prototype for <b>Technology in Foreign Language Teaching</b> · UNAD, Phase 4.</p>
+        <p class="small">Content adapted for primary school students (Pre-A1 / A1). Visuals and images created for this project.</p>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
