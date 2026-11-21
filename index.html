@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fbfaf6">
+<meta name="description" content="Interactive English learning page (Pre-A1 / A1) about respect, diversity and inclusion for primary school students.">
+<title>Respect Starts With Us · English for Primary School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== Inlined from css/styles.css ===== */
+/* =========================================================
+   RESPECT STARTS WITH US · Design system
+   Pastel palette: blue, yellow, green, lilac and orange - Updated 2026-11-21
+   ========================================================= */
+
+:root{
+  --ink:#2b3245;
+  --muted:#5c6478;
+  --paper:#fbfaf6;
+  --card:#ffffff;
+  --line:#e8e4ee;
+
+  --blue:#79aede;      --blue-soft:#e6f2fb;   --blue-ink:#2a5d86;
+  --yellow:#f2c94c;    --yellow-soft:#fff4cf; --yellow-ink:#8a6200;
+  --green:#78c29a;     --green-soft:#e2f5ea;  --green-ink:#2f6b4a;
+  --lilac:#a48fdd;     --lilac-soft:#eee9fc;  --lilac-ink:#5b459e;
+  --orange:#eda172;    --orange-soft:#ffeadd; --orange-ink:#9a5222;
+
+  --btn:#6c5bb8;
+  --btn-hover:#5a49a5;
+  --shadow:0 10px 28px rgba(43,50,69,.07);
+  --shadow-lg:0 18px 44px rgba(43,50,69,.12);
+  --radius:20px;
+  --font-head:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Nunito","Segoe UI",system-ui,sans-serif;
+
+  --accent:var(--blue);
+  --accent-soft:var(--blue-soft);
+  --accent-ink:var(--blue-ink);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:18px;
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+[hidden]{display:none !important}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+a{color:var(--lilac-ink)}
+p{margin:0 0 1em}
+h1,h2,h3,h4{
+  font-family:var(--font-head);
+  line-height:1.12;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  margin:0 0 .5em;
+}
+:focus-visible{outline:3px solid var(--lilac);outline-offset:3px}
+.panel h1:focus,.panel h2:focus{outline:none}
+
+.skip-link{
+  position:absolute;left:-9999px;top:12px;z-index:200;
+  background:#fff;color:var(--ink);padding:10px 16px;border-radius:12px;
+  font-weight:800;text-decoration:none;box-shadow:var(--shadow);
+}
+.skip-link:focus{left:12px}
+
+/* ---------------- Layout ---------------- */
+.app{display:grid;grid-template-columns:292px minmax(0,1fr);min-height:100vh}
+.main{min-width:0;display:flex;flex-direction:column}
+
+/* ---------------- Sidebar ---------------- */
+.sidebar{
+  position:sticky;top:0;height:100vh;overflow-y:auto;
+  background:#fff;border-right:1px solid var(--line);
+  padding:20px 16px 18px;display:flex;flex-direction:column;gap:16px;
+  scrollbar-width:thin;
+}
+.brand{display:flex;align-items:center;gap:12px;padding:4px 6px}
+.brand-logo{
+  width:50px;height:50px;flex:0 0 auto;border-radius:16px;
+  display:grid;place-items:center;font-size:1.6rem;
+  background:linear-gradient(135deg,var(--lilac-soft),var(--blue-soft) 55%,var(--yellow-soft));
+  border:1px solid var(--line);
+}
+.brand-title{font-family:var(--font-head);font-weight:800;font-size:1.02rem;line-height:1.15}
+.brand-sub{font-size:.76rem;color:var(--muted);font-weight:800;letter-spacing:.04em}
+
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav-item{
+  display:flex;align-items:center;gap:11px;width:100%;
+  border:1px solid transparent;background:transparent;
+  padding:9px 10px;border-radius:14px;
+  font-weight:700;font-size:.98rem;color:var(--ink);
+  cursor:pointer;text-align:left;
+  transition:background .18s,border-color .18s,transform .18s;
+}
+.nav-item:hover{background:#f7f5fb;transform:translateX(2px)}
+.nav-item.is-current{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+.nav-ico{
+  width:34px;height:34px;flex:0 0 auto;border-radius:11px;
+  display:grid;place-items:center;font-size:1.05rem;
+  background:var(--chip,var(--paper));
+}
+.nav-item.is-current .nav-ico{background:#fff}
+.nav-label{line-height:1.2}
+
+.progress-card{
+  margin-top:auto;padding:14px;border-radius:18px;border:1px solid var(--line);
+  background:linear-gradient(160deg,var(--blue-soft),#fff 55%,var(--yellow-soft));
+}
+.progress-card h3{font-size:.92rem;margin-bottom:8px}
+.bar{height:10px;border-radius:999px;background:#fff;border:1px solid var(--line);overflow:hidden}
+.bar span{
+  display:block;height:100%;width:0;border-radius:999px;
+  background:linear-gradient(90deg,var(--blue),var(--green),var(--yellow),var(--orange),var(--lilac));
+  transition:width .45s ease;
+}
+.progress-meta{display:flex;justify-content:space-between;gap:8px;margin-top:6px;font-size:.78rem;font-weight:800;color:var(--muted)}
+.sidebar-foot{margin:0;font-size:.7rem;line-height:1.45;text-align:center;color:var(--muted)}
+
+/* ---------------- Scrim (mobile) ---------------- */
+.scrim{
+  display:none;position:fixed;inset:0;z-index:50;
+  background:rgba(43,50,69,.42);backdrop-filter:blur(2px);
+}
+.scrim.is-on{display:block}
+
+/* ---------------- Topbar ---------------- */
+.topbar{
+  position:sticky;top:0;z-index:30;
+  display:flex;align-items:center;gap:14px;
+  padding:12px clamp(16px,3.5vw,34px);
+  background:rgba(251,250,246,.9);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.menu-btn{
+  display:none;align-items:center;gap:8px;
+  border:1px solid var(--line);background:#fff;border-radius:12px;
+  padding:10px 12px;font-weight:800;cursor:pointer;
+}
+.menu-btn:hover{background:var(--accent-soft)}
+.topbar-title-wrap{flex:1;min-width:0}
+.topbar-kicker{
+  display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--muted);
+}
+.topbar-title{
+  font-size:1.12rem;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.topbar-progress{
+  font-weight:800;font-size:.84rem;white-space:nowrap;
+  background:var(--accent-soft);color:var(--accent-ink);
+  border:1px solid var(--accent);border-radius:999px;padding:6px 12px;
+}
+
+/* ---------------- Content ---------------- */
+.content{
+  width:100%;max-width:1060px;margin:0 auto;flex:1;
+  padding:clamp(20px,3vw,34px) clamp(16px,4vw,44px) 40px;
+}
+.panel{display:none}
+.panel.is-active{display:block;animation:fadeUp .38s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.panel-head{margin:4px 0 22px}
+.eyebrow{
+  display:inline-block;margin-bottom:10px;padding:5px 12px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent-ink);
+  font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+}
+.panel-head h1{font-size:clamp(2rem,4.6vw,3rem);margin:0 0 8px}
+.panel-head h2{font-size:clamp(1.7rem,3.4vw,2.35rem);margin:0 0 8px;color:var(--accent-ink)}
+.lead{font-size:1.15rem;color:var(--muted);max-width:70ch;margin:0}
+
+/* ---------------- Hero ---------------- */
+.hero{
+  position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(20px,3vw,34px);align-items:center;
+  padding:clamp(22px,3.4vw,40px);
+  border:1px solid var(--line);border-radius:30px;
+  background:linear-gradient(135deg,var(--blue-soft),#fff 46%,var(--yellow-soft));
+  box-shadow:var(--shadow);
+}
+.hero::after{
+  content:"";position:absolute;right:-90px;top:-90px;width:230px;height:230px;
+  border-radius:50%;background:var(--lilac-soft);opacity:.75;pointer-events:none;
+}
+.hero-copy{position:relative;z-index:1}
+.tag{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;
+  background:#ffffffc9;border:1px solid #fff;
+  font-size:.78rem;font-weight:800;color:var(--blue-ink);
+  box-shadow:0 2px 8px rgba(43,50,69,.06);
+}
+.tag-en{
+  display:inline-grid;place-items:center;width:26px;height:18px;
+  border-radius:5px;background:var(--blue-ink);color:#fff;
+  font-size:.6rem;font-weight:800;letter-spacing:.06em;
+}
+.hero h1{font-size:clamp(2.1rem,5vw,3.5rem);margin:12px 0 4px}
+.hero-sub{
+  font-family:var(--font-head);font-weight:700;font-size:clamp(1.05rem,2.2vw,1.4rem);
+  color:var(--lilac-ink);margin:0 0 10px;
+}
+.hero .lead{font-size:1.08rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 16px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px}
+.hero-art{
+  position:relative;border-radius:24px;overflow:hidden;
+  border:1px solid #dbeaf7;background:var(--blue-soft);
+  box-shadow:0 12px 30px rgba(43,50,69,.1);
+}
+.hero-art img{width:100%;height:100%;max-height:430px;object-fit:cover}
+.art-fallback{display:none;place-items:center;min-height:260px;font-size:3.6rem}
+.hero-art.is-fallback .art-fallback{display:grid}
+
+/* ---------------- Buttons ---------------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 20px;border:0;border-radius:14px;
+  background:var(--btn);color:#fff;
+  font-weight:800;font-size:1.02rem;line-height:1.2;
+  text-decoration:none;cursor:pointer;
+  box-shadow:0 6px 16px rgba(108,91,184,.24);
+  transition:transform .18s,background .18s,box-shadow .18s;
+}
+.btn:hover{background:var(--btn-hover);transform:translateY(-2px);box-shadow:0 10px 22px rgba(108,91,184,.28)}
+.btn:active{transform:translateY(0)}
+.btn.ghost{
+  background:#fff;color:var(--accent-ink);
+  border:2px solid var(--accent);box-shadow:none;
+}
+.btn.ghost:hover{background:var(--accent-soft)}
+.btn.small-btn{padding:8px 14px;font-size:.9rem;border-radius:11px}
+
+/* ---------------- Utilities ---------------- */
+.mt-2{margin-top:12px}
+.mt-3{margin-top:18px}
+.mt-4{margin-top:26px}
+.small{font-size:.88rem;color:var(--muted)}
+.es{font-size:.92rem;color:var(--muted);font-style:italic}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 12px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent-ink);
+  border:1px solid var(--accent);
+  font-size:.78rem;font-weight:800;letter-spacing:.02em;
+}
+.chip{
+  display:inline-block;padding:5px 11px;border-radius:999px;
+  font-size:.78rem;font-weight:800;border:1px solid;
+}
+.chip.blue{background:var(--blue-soft);color:var(--blue-ink);border-color:#c9e3f6}
+.chip.yellow{background:var(--yellow-soft);color:var(--yellow-ink);border-color:#efd88b}
+.chip.green{background:var(--green-soft);color:var(--green-ink);border-color:#bfe4cd}
+.chip.lilac{background:var(--lilac-soft);color:var(--lilac-ink);border-color:#d9d0f2}
+.chip.orange{background:var(--orange-soft);color:var(--orange-ink);border-color:#f4cfb8}
+
+/* ---------------- Cards and grids ---------------- */
+.grid{display:grid;gap:16px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);
+}
+.card h3{font-size:1.22rem;margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+.icon-bubble{
+  width:54px;height:54px;border-radius:17px;margin-bottom:12px;
+  display:grid;place-items:center;font-size:1.65rem;
+  background:var(--accent-soft);border:1px solid var(--line);
+}
+
+/* ---------------- Learning path ---------------- */
+.route{
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px;
+  padding:16px 20px;border:1px solid var(--line);border-radius:18px;
+  background:#fff;box-shadow:var(--shadow);
+}
+.route-title{font-family:var(--font-head);font-weight:800;color:var(--lilac-ink)}
+.route-steps{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.route-step{
+  padding:5px 12px;border:1px solid var(--line);border-radius:999px;
+  background:var(--paper);font-size:.84rem;font-weight:700;
+}
+.route-arrow{color:var(--muted)}
+
+/* ---------------- Infographic ---------------- */
+.type-card{position:relative;overflow:hidden;padding-top:26px}
+.type-card::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--tc,var(--accent))}
+.type-card .icon-bubble{background:#fff}
+.type-card.orange{--tc:var(--orange);background:var(--orange-soft);border-color:#f4cfb8}
+.type-card.yellow{--tc:var(--yellow);background:var(--yellow-soft);border-color:#efd88b}
+.type-card.lilac{--tc:var(--lilac);background:var(--lilac-soft);border-color:#d9d0f2}
+.type-card.blue{--tc:var(--blue);background:var(--blue-soft);border-color:#c9e3f6}
+
+/* ---------------- Content images ---------------- */
+.media-figure{
+  margin:0 0 4px;overflow:hidden;
+  border:1px solid var(--line);border-radius:26px;
+  background:#fff;box-shadow:var(--shadow-lg);
+}
+.media-figure img{
+  width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
+  background:var(--accent-soft);
+}
+.media-figure figcaption{
+  padding:14px 20px;
+  border-top:1px solid var(--line);
+  background:linear-gradient(135deg,#fff,var(--accent-soft));
+  color:var(--muted);font-size:.95rem;
+}
+.media-figure figcaption b{color:var(--accent-ink);font-family:var(--font-head);font-size:1.02rem}
+.media-figure.lilac{border-color:#d9d0f2}
+
+.tips-card{background:linear-gradient(135deg,#fff,var(--green-soft))}
+.tips-card .grid-4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.tip{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:12px;border:1px solid var(--line);border-radius:14px;
+  background:#fff;font-size:.93rem;font-weight:700;
+}
+.tip span:first-child{font-size:1.25rem;line-height:1.2}
+.tip em{color:var(--muted);font-weight:600}
+
+.key-message{
+  display:flex;align-items:center;gap:14px;
+  padding:18px 20px;border:1px solid #f0d98a;border-radius:18px;
+  background:var(--yellow-soft);
+}
+.key-message .emoji{font-size:2rem;line-height:1;flex:0 0 auto}
+.key-message b{display:block;font-size:1.05rem;line-height:1.35}
+.key-message span:not(.emoji){display:block;font-size:.93rem;color:var(--yellow-ink);margin-top:2px}
+
+/* ---------------- Mind map ---------------- */
+.map-wrap{
+  display:flex;flex-direction:column;align-items:center;gap:20px;
+  padding:26px 16px;border:1px solid var(--line);border-radius:26px;
+  background:radial-gradient(circle at 50% 25%,var(--lilac-soft),#fff 72%);
+}
+.map-center{
+  width:190px;height:190px;border-radius:50%;padding:18px;
+  display:grid;place-items:center;text-align:center;
+  background:linear-gradient(135deg,#7a63c0,#9a85d6);
+  color:#fff;font-family:var(--font-head);font-weight:800;
+  font-size:1.22rem;line-height:1.2;
+  box-shadow:0 14px 30px rgba(164,143,221,.35);
+}
+.map-branches{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:740px}
+.map-node{
+  padding:10px 16px;border-radius:999px;
+  border:2px solid #d9d0f2;background:#fff;color:var(--lilac-ink);
+  font-weight:800;font-size:.96rem;cursor:pointer;
+  transition:background .18s,transform .18s,border-color .18s;
+}
+.map-node:hover{background:var(--lilac-soft);transform:translateY(-2px)}
+.map-node.is-active{background:var(--lilac-ink);border-color:var(--lilac-ink);color:#fff}
+.map-detail{
+  display:flex;align-items:flex-start;gap:16px;
+  margin-top:16px;border-left:6px solid var(--lilac);
+}
+.map-detail .map-icon{font-size:2.2rem;line-height:1;flex:0 0 auto}
+.map-detail h3{color:var(--lilac-ink);margin-bottom:6px}
+.map-detail p{margin:0 0 4px}
+.map-detail .example{
+  margin-top:10px;padding:10px 14px;border-radius:12px;
+  background:var(--lilac-soft);font-weight:700;
+}
+
+/* ---------------- Video and audio ---------------- */
+.audio-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.script{
+  padding:14px 16px;border-radius:14px;
+  background:var(--paper);border:1px dashed var(--line);
+  font-style:italic;font-size:.96rem;
+}
+.video-frame{
+  position:relative;aspect-ratio:16/9;overflow:hidden;
+  border-radius:16px;background:#10131c;
+}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.action-card{
+  padding:20px 14px;border-radius:20px;border:1px solid;text-align:center;
+}
+.action-card .big{display:block;font-size:2rem;line-height:1;margin-bottom:8px}
+.action-card h3{font-size:1.1rem;margin-bottom:4px}
+.action-card p{font-size:.88rem;margin:0;color:var(--muted)}
+.action-card.stop{background:var(--orange-soft);border-color:#f4cfb8}
+.action-card.help{background:var(--blue-soft);border-color:#c9e3f6}
+.action-card.report{background:var(--yellow-soft);border-color:#efd88b}
+.action-card.include{background:var(--green-soft);border-color:#bfe4cd}
+
+/* ---------------- Study guide ---------------- */
+.flash-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:14px;margin:14px 0 26px;
+}
+.flashcard{
+  height:150px;padding:0;border:0;background:none;
+  perspective:1000px;cursor:pointer;font:inherit;text-align:center;
+}
+.fc-inner{
+  position:relative;display:block;width:100%;height:100%;
+  transform-style:preserve-3d;transition:transform .55s;
+}
+.flashcard.is-flipped .fc-inner{transform:rotateY(180deg)}
+.flashcard:focus-visible{outline:none}
+.flashcard:focus-visible .fc-inner{outline:3px solid var(--lilac);outline-offset:3px;border-radius:18px}
+.fc-face{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:6px;padding:14px;
+  border-radius:18px;border:2px solid;backface-visibility:hidden;
+}
+.fc-front{
+  background:var(--yellow-soft);border-color:#efd88b;
+  color:var(--yellow-ink);font-family:var(--font-head);
+  font-weight:800;font-size:1.35rem;
+}
+.fc-front small,.fc-back small{
+  font-family:var(--font-body);font-weight:800;font-size:.68rem;
+  letter-spacing:.07em;text-transform:uppercase;opacity:.62;
+}
+.fc-back{
+  background:var(--blue-soft);border-color:#c9e3f6;
+  color:var(--blue-ink);font-weight:800;font-size:1rem;
+  transform:rotateY(180deg);
+}
+.fc-back small{text-transform:none;letter-spacing:0;font-weight:600;font-size:.8rem;opacity:.8}
+
+.glossary{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.gloss{
+  padding:10px 12px;border:1px solid var(--line);border-radius:12px;
+  background:var(--paper);font-size:.9rem;
+}
+.gloss b{display:block;color:var(--blue-ink);font-size:1rem}
+
+.reading{background:linear-gradient(135deg,#fff,var(--yellow-soft) 170%)}
+.reading-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.reading-head h3{margin:0 0 10px}
+.story{
+  margin:12px 0;padding:16px 18px;
+  background:#fff;border-left:6px solid var(--yellow);border-radius:0 14px 14px 0;
+  font-size:1.16rem;font-weight:600;
+}
+.answers{
+  margin-top:14px;padding:14px 18px;
+  background:#fff;border:1px dashed var(--line);border-radius:14px;
+  animation:fadeUp .3s ease both;
+}
+.answers ol{margin:0;padding-left:20px}
+.answers li{margin-bottom:6px}
+
+.frames{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.frame{
+  padding:10px 16px;border-radius:999px;
+  border:2px dashed var(--lilac);background:var(--lilac-soft);
+  color:var(--lilac-ink);font-weight:800;font-size:.95rem;cursor:pointer;
+  transition:background .18s,transform .18s;
+}
+.frame:hover{background:#e4dbfa;transform:translateY(-2px)}
+.frame-line{
+  display:inline-block;padding:8px 16px;border-radius:999px;
+  background:var(--yellow-soft);border:1px solid #efd88b;
+  font-weight:800;color:var(--yellow-ink);
+}
+
+/* ---------------- Practice ---------------- */
+.quiz-top{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;flex-wrap:wrap;margin-bottom:14px;
+}
+.score-chip{
+  padding:6px 14px;border-radius:999px;
+  background:var(--green-soft);border:1px solid var(--green);
+  color:var(--green-ink);font-weight:800;font-size:.9rem;
+}
+.quiz-list{display:grid;gap:14px}
+.q-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.q-num{
+  width:36px;height:36px;flex:0 0 auto;border-radius:12px;
+  display:grid;place-items:center;
+  background:var(--accent-soft);color:var(--accent-ink);font-weight:800;
+}
+.question h3{font-size:1.12rem;margin:4px 0 0}
+.options{display:grid;gap:9px}
+.option{
+  display:flex;align-items:center;gap:12px;width:100%;
+  padding:12px 14px;border:2px solid var(--line);border-radius:13px;
+  background:#fff;font-size:1rem;font-weight:600;text-align:left;cursor:pointer;
+  transition:border-color .18s,background .18s,transform .18s;
+}
+.option:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft);transform:translateX(2px)}
+.option .key{
+  width:30px;height:30px;flex:0 0 auto;border-radius:9px;
+  display:grid;place-items:center;
+  background:var(--paper);color:var(--muted);font-weight:800;font-size:.85rem;
+}
+.option.correct{border-color:var(--green);background:var(--green-soft)}
+.option.correct .key{background:var(--green-ink);color:#fff}
+.option.wrong{border-color:var(--orange);background:var(--orange-soft)}
+.option.wrong .key{background:var(--orange-ink);color:#fff}
+.option:disabled{cursor:default;opacity:1}
+.feedback{min-height:1.5em;margin:10px 0 0;font-weight:700;font-size:.95rem}
+.feedback.ok{color:var(--green-ink)}
+.feedback.no{color:var(--orange-ink)}
+.done-msg{
+  margin-top:14px;padding:12px 16px;border-radius:14px;
+  background:var(--green-soft);border:1px solid var(--green);
+  color:var(--green-ink);font-weight:800;
+}
+.done-msg:empty{display:none}
+.speak-card{background:linear-gradient(135deg,#fff,var(--blue-soft) 180%)}
+.field{display:block;margin:10px 0 6px;font-weight:800;font-size:.9rem}
+textarea,input[type="text"]{
+  width:100%;padding:12px 14px;
+  border:2px solid var(--line);border-radius:12px;
+  background:#fff;color:var(--ink);font:inherit;font-size:1rem;
+}
+textarea{resize:vertical;min-height:90px}
+textarea:focus,input[type="text"]:focus{
+  outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);
+}
+.row-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+
+/* ---------------- Scenarios ---------------- */
+.scenario{display:flex;flex-direction:column}
+.scenario .emoji{font-size:2.2rem;line-height:1;margin-bottom:6px}
+.scenario .btn{align-self:flex-start;margin-top:auto}
+.reveal{
+  margin-top:12px;padding:12px 16px;border-radius:14px;
+  background:var(--green-soft);border:1px solid var(--green);
+  animation:fadeUp .3s ease both;
+}
+.reveal p{margin:0 0 4px;font-weight:800;color:var(--green-ink)}
+.reveal span{font-size:.88rem;color:var(--muted)}
+
+/* ---------------- Escape Room ---------------- */
+.mission-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;margin-bottom:14px;
+}
+.dots{display:flex;gap:8px}
+.dot{
+  width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#fff;border:2px solid var(--line);
+  color:var(--muted);font-weight:800;font-size:.8rem;
+  transition:transform .2s,background .2s,border-color .2s;
+}
+.dot.done{background:var(--green-soft);border-color:var(--green);color:var(--green-ink)}
+.dot.now{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink);transform:scale(1.1)}
+.game-card{min-height:280px;background:linear-gradient(160deg,#fff,var(--orange-soft) 190%)}
+.game-card h3{font-size:1.42rem}
+.mission-q{font-size:1.12rem;font-weight:700}
+.mission-actions{margin-top:16px}
+.finish{text-align:center;padding:14px}
+.finish .badge{display:inline-block;font-size:4rem;line-height:1;animation:pulse 2s infinite}
+.finish h3{font-size:1.6rem;color:var(--green-ink)}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+/* ---------------- Canva action buttons ---------------- */
+.canva-actions{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:18px;margin-top:14px;
+}
+.canva-action{
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;gap:18px;
+  min-height:170px;padding:24px;
+  border-radius:24px;border:2px solid;
+  text-decoration:none;color:var(--ink);
+  box-shadow:0 12px 26px rgba(43,50,69,.1);
+  transition:transform .18s,box-shadow .18s;
+}
+.canva-action::after{
+  content:"";position:absolute;right:-40px;bottom:-50px;
+  width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.45);
+  pointer-events:none;
+}
+.canva-action:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(43,50,69,.16)}
+.canva-action.escape{
+  background:linear-gradient(135deg,var(--orange-soft),#fff 55%,var(--yellow-soft));
+  border-color:#f4cfb8;
+}
+.canva-action.tree{
+  background:linear-gradient(135deg,var(--green-soft),#fff 55%,var(--blue-soft));
+  border-color:#bfe4cd;
+}
+.canva-ico{
+  flex:0 0 auto;width:76px;height:76px;border-radius:22px;
+  display:grid;place-items:center;font-size:2.4rem;
+  background:#fff;border:1px solid var(--line);
+  box-shadow:0 6px 14px rgba(43,50,69,.08);
+}
+.canva-copy{position:relative;z-index:1;display:flex;flex-direction:column;gap:2px}
+.canva-title{font-family:var(--font-head);font-weight:800;font-size:1.5rem;line-height:1.15}
+.canva-sub{font-size:.92rem;font-weight:700;color:var(--muted)}
+.canva-cta{
+  margin-top:10px;align-self:flex-start;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:9px 16px;border-radius:999px;
+  background:var(--btn);color:#fff;
+  font-weight:800;font-size:.92rem;
+  box-shadow:0 6px 14px rgba(108,91,184,.22);
+  transition:background .18s;
+}
+.canva-action:hover .canva-cta{background:var(--btn-hover)}
+
+/* ---------------- AI tools ---------------- */
+.tool-card{display:flex;flex-direction:column;border-top:6px solid var(--green)}
+.tool-card.copilot{border-top-color:var(--blue)}
+.prompt{
+  padding:12px 14px;border:1px dashed var(--line);border-radius:12px;
+  background:var(--paper);font-size:.9rem;font-style:italic;
+}
+.tool-card .btn{margin-top:auto;align-self:flex-start}
+
+/* ---------------- Reflection ---------------- */
+.saved-note{
+  margin-top:12px;padding:12px 16px;border-radius:14px;
+  background:var(--yellow-soft);border:1px solid #f0d98a;
+  color:var(--yellow-ink);font-weight:700;
+}
+.ticket-result{
+  margin-top:12px;padding:14px 16px;border-radius:14px;
+  background:var(--green-soft);border:1px solid var(--green);
+  animation:fadeUp .3s ease both;
+}
+.ticket-result h4{margin:0 0 8px;color:var(--green-ink);font-size:1.1rem}
+.ticket-result p{margin:0 0 4px}
+.ticket-warn{background:var(--orange-soft);border-color:var(--orange);color:var(--orange-ink);font-weight:700}
+.inclusion-banner{
+  display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:center;
+  background:linear-gradient(135deg,var(--blue-soft),#fff 60%,var(--lilac-soft));
+}
+.inclusion-banner img{width:100%;border-radius:18px;border:1px solid var(--line)}
+.inclusion-banner.is-fallback{grid-template-columns:1fr}
+.inclusion-banner.is-fallback img{display:none}
+
+/* ---------------- Teacher notes ---------------- */
+.checklist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.checklist li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem}
+.checklist li::before{
+  content:"✓";flex:0 0 auto;width:22px;height:22px;margin-top:2px;
+  display:grid;place-items:center;border-radius:50%;
+  background:var(--green-soft);color:var(--green-ink);
+  font-size:.75rem;font-weight:800;
+}
+
+/* ---------------- Pager and footer ---------------- */
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:30px}
+.pager button{
+  max-width:48%;padding:12px 18px;
+  border:2px solid var(--line);border-radius:14px;
+  background:#fff;color:var(--ink);font-weight:800;cursor:pointer;
+  transition:border-color .18s,background .18s;
+}
+.pager button:hover{border-color:var(--accent);background:var(--accent-soft)}
+.pager .next{margin-left:auto;text-align:right}
+.site-footer{
+  margin-top:34px;padding:24px 0 0;
+  border-top:1px solid var(--line);
+  color:var(--muted);font-size:.85rem;text-align:center;
+}
+.site-footer p{margin:0 0 4px}
+.site-footer b{color:var(--ink)}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width:1080px){
+  .app{grid-template-columns:1fr}
+  .sidebar{
+    position:fixed;top:0;left:0;bottom:0;z-index:60;
+    width:min(86vw,320px);height:100%;
+    transform:translateX(-105%);transition:transform .28s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.18);
+  }
+  .sidebar.is-open{transform:none}
+  .menu-btn{display:inline-flex}
+}
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .hero-art{max-width:520px;margin:0 auto}
+  .inclusion-banner{grid-template-columns:1fr}
+  .inclusion-banner img{max-width:320px}
+}
+@media (max-width:600px){
+  body{font-size:17px}
+  .topbar-progress{display:none}
+  .content{padding-bottom:24px}
+  .card{padding:18px}
+  .grid{gap:12px}
+  .pager{flex-direction:column}
+  .pager button{max-width:100%;width:100%}
+  .pager .next{margin-left:0}
+  .flash-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  .map-center{width:160px;height:160px;font-size:1rem}
+  .key-message{align-items:flex-start}
+  .dot{width:28px;height:28px;font-size:.72rem}
+  .media-figure{border-radius:20px}
+  .media-figure figcaption{padding:12px 14px;font-size:.88rem}
+  .canva-action{min-height:150px;padding:20px;gap:14px}
+  .canva-ico{width:60px;height:60px;border-radius:18px;font-size:1.9rem}
+  .canva-title{font-size:1.25rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  html{scroll-behavior:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+
+<div class="app">
+  <!-- ================= NAVIGATION PANEL ================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Section menu">
+    <div class="brand">
+      <span class="brand-logo" aria-hidden="true">🤝</span>
+      <div>
+        <div class="brand-title">Respect Starts<br>With Us</div>
+        <div class="brand-sub">English · A1</div>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav" aria-label="Page sections">
+      <noscript><p class="small">Turn on JavaScript to navigate the sections.</p></noscript>
+    </nav>
+
+    <div class="progress-card">
+      <h3 id="progress-title">Your progress</h3>
+      <div class="bar" id="progress-track" role="progressbar" aria-labelledby="progress-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span id="progress-bar"></span>
+      </div>
+      <div class="progress-meta">
+        <span id="progress-text">1 of 11 sections</span>
+        <span id="progress-percent">0%</span>
+      </div>
+    </div>
+
+    <p class="sidebar-foot">Educational prototype · UNAD<br>Technology in Foreign Language Teaching</p>
+  </aside>
+
+  <div class="scrim" id="scrim"></div>
+
+  <div class="main">
+    <!-- ================= TOP BAR ================= -->
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn" type="button" aria-controls="sidebar" aria-expanded="false">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+      <div class="topbar-title-wrap">
+        <span class="topbar-kicker">Respect Starts With Us</span>
+        <h2 class="topbar-title" id="topbar-title">Home</h2>
+      </div>
+      <span class="topbar-progress" id="progress-count" aria-hidden="true">0%</span>
+    </header>
+
+    <main class="content" id="content">
+      <!-- ================= 01 · HOME ================= -->
+      <section class="panel is-active" id="panel-inicio" aria-hidden="false">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="tag"><span class="tag-en" aria-hidden="true">EN</span> English · Pre-A1 / A1 · Reading &amp; Speaking</span>
+            <h1>Respect Starts With Us</h1>
+            <p class="hero-sub">Respect begins with us.</p>
+            <p class="lead">Learn English and build inclusion. Discover new words and find out how to make everyone feel welcome, safe and happy.</p>
+            <div class="hero-actions">
+              <button type="button" class="btn" data-go="infografia">Start the adventure →</button>
+              <button type="button" class="btn ghost" data-go="mapa">See the mind map</button>
+            </div>
+            <div class="hero-chips">
+              <span class="chip blue">6 key words</span>
+              <span class="chip yellow">5 missions</span>
+              <span class="chip green">3 readings</span>
+              <span class="chip lilac">1 badge</span>
+            </div>
+          </div>
+          <div class="hero-art">
+            <img src="assets/hero.svg" alt="Illustration of four diverse students smiling together with a heart." width="520" height="400" onerror="this.style.display='none';this.parentElement.classList.add('is-fallback');">
+            <span class="art-fallback" aria-hidden="true">🤝💛</span>
+          </div>
+        </div>
+
+        <div class="grid grid-3 mt-3">
+          <article class="card">
+            <div class="icon-bubble" aria-hidden="true">🎯</div>
+            <h3>Your mission</h3>
+            <p>Recognise respect and bullying in short situations, and suggest an inclusive answer in English.</p>
+          </article>
+          <article class="card">
+            <div class="icon-bubble" aria-hidden="true">💪</div>
+            <h3>Your superpowers</h3>
+            <p><b>Reading:</b> understand short stories.<br><b>Speaking:</b> say kind and safe sentences.</p>
+          </article>
+          <article class="card">
+            <div class="icon-bubble" aria-hidden="true">🧭</div>
+            <h3>How to use this page</h3>
+            <p>Choose a section in the menu, explore, practise and complete the Escape Room. Your progress is saved automatically.</p>
+          </article>
+        </div>
+
+        <div class="route mt-3">
+          <span class="route-title">Learning path</span>
+          <div class="route-steps">
+            <span class="route-step">1. Explore</span>
+            <span class="route-arrow" aria-hidden="true">→</span>
+            <span class="route-step">2. Learn</span>
+            <span class="route-arrow" aria-hidden="true">→</span>
+            <span class="route-step">3. Practise</span>
+            <span class="route-arrow" aria-hidden="true">→</span>
+            <span class="route-step">4. Play</span>
+            <span class="route-arrow" aria-hidden="true">→</span>
+            <span class="route-step">5. Reflect</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 02 · INFOGRAPHIC ================= -->
+      <section class="panel" id="panel-infografia" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">01 · Infographic</span>
+          <h2>Stop bullying, start respect</h2>
+          <p class="lead">Bullying is repeated hurtful behaviour. Learn to recognise it and to answer with respect.</p>
+        </div>
+
+        <figure class="media-figure">
+          <img src="images/infographic.png" alt="Infographic about bullying: physical, verbal, social and online bullying, with four respectful actions we can take." width="1536" height="1024" loading="lazy" decoding="async">
+          <figcaption><b>Infographic.</b> Four types of bullying and four things we can do about it.</figcaption>
+        </figure>
+
+        <div class="grid grid-4 mt-3">
+          <article class="card type-card orange">
+            <div class="icon-bubble" aria-hidden="true">✋</div>
+            <h3>Physical</h3>
+            <p>Hitting, pushing or kicking.</p>
+          </article>
+          <article class="card type-card yellow">
+            <div class="icon-bubble" aria-hidden="true">🗣️</div>
+            <h3>Verbal</h3>
+            <p>Name-calling, insults or laughing at someone.</p>
+          </article>
+          <article class="card type-card lilac">
+            <div class="icon-bubble" aria-hidden="true">👥</div>
+            <h3>Social</h3>
+            <p>Leaving someone out on purpose.</p>
+          </article>
+          <article class="card type-card blue">
+            <div class="icon-bubble" aria-hidden="true">🌐</div>
+            <h3>Online</h3>
+            <p>Sending or sharing hurtful messages.</p>
+          </article>
+        </div>
+
+        <div class="card tips-card mt-3">
+          <h3>What can we do?</h3>
+          <div class="grid grid-4">
+            <div class="tip"><span aria-hidden="true">💛</span><span>Be kind.</span></div>
+            <div class="tip"><span aria-hidden="true">🤝</span><span>Include others.</span></div>
+            <div class="tip"><span aria-hidden="true">🚫</span><span>Don't share hurtful messages.</span></div>
+            <div class="tip"><span aria-hidden="true">🙋</span><span>Ask a trusted adult.</span></div>
+          </div>
+        </div>
+
+        <div class="key-message mt-3">
+          <span class="emoji" aria-hidden="true">💛</span>
+          <div>
+            <b>Key message: Everyone deserves respect, safety and belonging.</b>
+            <span>Every child has the right to feel safe and included at school.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 03 · MIND MAP ================= -->
+      <section class="panel" id="panel-mapa" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">02 · Mind Map</span>
+          <h2>Respect and inclusion</h2>
+          <p class="lead">Look at the mind map, then tap a branch to discover an idea and a model sentence in English.</p>
+        </div>
+
+        <figure class="media-figure lilac">
+          <img src="images/mind_map.png" alt="Mind map of respect and inclusion with branches for empathy, diversity, equality, safe communication and help-seeking." width="1536" height="1024" loading="lazy" decoding="async">
+          <figcaption><b>Mind map.</b> Five big ideas that grow from respect and inclusion.</figcaption>
+        </figure>
+
+        <h3 class="mt-4">Explore the branches</h3>
+        <div class="map-wrap">
+          <div class="map-center"><span>RESPECT<br>&amp;<br>INCLUSION</span></div>
+          <div class="map-branches">
+            <button type="button" class="map-node" data-map="empathy">💗 Empathy</button>
+            <button type="button" class="map-node" data-map="diversity">🌍 Diversity</button>
+            <button type="button" class="map-node" data-map="equality">⚖️ Equality</button>
+            <button type="button" class="map-node" data-map="safe">💬 Safe communication</button>
+            <button type="button" class="map-node" data-map="help">🤝 Help-seeking</button>
+          </div>
+        </div>
+
+        <div class="card map-detail" id="map-detail" aria-live="polite"></div>
+        <p class="frame-line mt-3">“We are different, and we all deserve respect.”</p>
+      </section>
+
+      <!-- ================= 04 · VIDEO AND AUDIO ================= -->
+      <section class="panel" id="panel-vio" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">03 · Video and audio</span>
+          <h2>Watch, listen and remember</h2>
+          <p class="lead">Listen to the message, watch the video and discover the four key actions.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card audio-card">
+            <span class="pill">Listen</span>
+            <h3 class="mt-2">Listen and repeat</h3>
+            <p>Listen to the message and repeat the sentences out loud.</p>
+            <div class="audio-actions">
+              <button type="button" class="btn" data-speak="Respect means treating people with kindness. Include everyone. If you see bullying, do not join in. Help the person and tell a trusted adult.">▶ Play the message</button>
+              <button type="button" class="btn ghost" data-stop-speak>■ Stop</button>
+            </div>
+            <p class="script">“Respect means treating people with kindness. Include everyone. If you see bullying, do not join in. Help the person and tell a trusted adult.”</p>
+            <p class="small">The audio uses the voice of your browser. You can also ask your teacher to read the message out loud.</p>
+          </div>
+
+          <div class="card video-card">
+            <span class="pill">Watch</span>
+            <h3 class="mt-2">UNICEF #ENDviolence</h3>
+            <div class="video-frame mt-2">
+              <iframe src="https://www.youtube.com/embed/76hArsk3big" title="UNICEF video about kindness and anti-bullying" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="small">The teacher checks the video before using it in class. If it does not load when you open this file locally, <a href="https://www.youtube.com/watch?v=76hArsk3big" target="_blank" rel="noopener">watch it on YouTube ↗</a>.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-4 mt-3">
+          <div class="action-card stop">
+            <span class="big" aria-hidden="true">✋</span>
+            <h3>STOP</h3>
+            <p>Do not hurt.</p>
+          </div>
+          <div class="action-card help">
+            <span class="big" aria-hidden="true">💙</span>
+            <h3>HELP</h3>
+            <p>Support a classmate.</p>
+          </div>
+          <div class="action-card report">
+            <span class="big" aria-hidden="true">📣</span>
+            <h3>REPORT</h3>
+            <p>Tell a trusted adult.</p>
+          </div>
+          <div class="action-card include">
+            <span class="big" aria-hidden="true">🤗</span>
+            <h3>INCLUDE</h3>
+            <p>Invite everyone.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 05 · STUDY GUIDE ================= -->
+      <section class="panel" id="panel-guia" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">04 · Study guide</span>
+          <h2>Words, reading and speaking frames</h2>
+          <p class="lead">Flip the cards, read the story and use the model sentences to speak in English.</p>
+        </div>
+
+        <h3>Digital flashcards</h3>
+        <div class="flash-grid">
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">respect<small>tap to flip</small></span>
+              <span class="fc-face fc-back">treating people well<small>being kind to everyone</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">kind<small>tap to flip</small></span>
+              <span class="fc-face fc-back">friendly and caring<small>nice to other people</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">equal<small>tap to flip</small></span>
+              <span class="fc-face fc-back">having the same value<small>no one is better than anyone</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">include<small>tap to flip</small></span>
+              <span class="fc-face fc-back">make someone part of a group<small>invite them in</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">bully<small>tap to flip</small></span>
+              <span class="fc-face fc-back">a person who repeatedly hurts others<small>again and again</small></span>
+            </span>
+          </button>
+          <button type="button" class="flashcard" aria-pressed="false">
+            <span class="fc-inner">
+              <span class="fc-face fc-front">report<small>tap to flip</small></span>
+              <span class="fc-face fc-back">tell a responsible adult<small>ask for help</small></span>
+            </span>
+          </button>
+        </div>
+
+        <h3>Mini glossary</h3>
+        <div class="glossary">
+          <div class="gloss"><b>respect</b>treating people well</div>
+          <div class="gloss"><b>kind</b>friendly and caring</div>
+          <div class="gloss"><b>equal</b>having the same value</div>
+          <div class="gloss"><b>different</b>not the same</div>
+          <div class="gloss"><b>include</b>make someone part of the group</div>
+          <div class="gloss"><b>bully</b>hurt someone again and again</div>
+          <div class="gloss"><b>help</b>do something good for someone</div>
+          <div class="gloss"><b>report</b>tell a trusted adult</div>
+        </div>
+
+        <div class="card reading mt-3">
+          <div class="reading-head">
+            <h3>A New Student</h3>
+            <button type="button" class="btn ghost small-btn" data-speak="Mia is new at school. Some students do not invite her to play. Leo says: Come and play with us, Mia! The students make a team together. Mia feels welcome.">🔊 Listen to the story</button>
+          </div>
+          <p class="story">“Mia is new at school. Some students do not invite her to play. Leo says, ‘Come and play with us, Mia!’ The students make a team together. Mia feels welcome.”</p>
+          <button type="button" class="btn ghost" data-toggle="reading-answers" aria-expanded="false">Show questions and answers</button>
+          <div class="answers" id="reading-answers" hidden>
+            <ol>
+              <li>Who is new at school? <b>Mia.</b></li>
+              <li>What does Leo say? <b>“Come and play with us.”</b></li>
+              <li>How does Mia feel? <b>Welcome.</b></li>
+            </ol>
+          </div>
+        </div>
+
+        <h3 class="mt-4">Speaking frames</h3>
+        <p class="small">Tap a sentence to take it to the practice section and complete it.</p>
+        <div class="frames">
+          <button type="button" class="frame" data-frame="We should ______ because ______.">We should ______ because ______.</button>
+          <button type="button" class="frame" data-frame="We can help by ______.">We can help by ______.</button>
+          <button type="button" class="frame" data-frame="Everyone deserves ______.">Everyone deserves ______.</button>
+        </div>
+      </section>
+
+      <!-- ================= 06 · PRACTICE ================= -->
+      <section class="panel" id="panel-practica" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">05 · Interactive practice</span>
+          <h2>Show what you know</h2>
+          <p class="lead">Read each situation, choose the correct answer and get instant feedback.</p>
+        </div>
+
+        <div class="quiz-top">
+          <span class="pill">Reading practice · 3 questions</span>
+          <span class="score-chip" id="quiz-score" aria-live="polite">0 / 3 correct</span>
+        </div>
+
+        <div class="quiz-list" id="quiz-list"></div>
+        <p class="done-msg" id="quiz-done" aria-live="polite"></p>
+
+        <div class="row-actions mt-2">
+          <button type="button" class="btn ghost" id="quiz-reset">↺ Restart practice</button>
+        </div>
+
+        <div class="card speak-card mt-4">
+          <span class="pill">Speaking</span>
+          <h3 class="mt-2">Now say it in English</h3>
+          <p>Complete the sentence and read it out loud to your teacher or a classmate.</p>
+          <p class="frame-line">“We should ______ because ______.”</p>
+          <label class="field" for="speak">Your answer</label>
+          <textarea id="speak" rows="3" placeholder="We should include everyone because..."></textarea>
+          <div class="row-actions">
+            <button type="button" class="btn" id="speak-save">Save my answer</button>
+            <button type="button" class="btn ghost" id="speak-example">Show an example</button>
+          </div>
+          <p class="feedback" id="speak-fb" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- ================= 07 · SCENARIOS ================= -->
+      <section class="panel" id="panel-escenarios" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">06 · Scenarios</span>
+          <h2>What would you do?</h2>
+          <p class="lead">Read the situation, think of a respectful answer and then compare it with the suggestion.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card scenario">
+            <span class="emoji" aria-hidden="true">🙋</span>
+            <h3>A new classmate</h3>
+            <p>A new student is sitting alone at break. What can you say?</p>
+            <button type="button" class="btn ghost" data-reveal="sc-a" aria-expanded="false">Show a respectful answer</button>
+            <div class="reveal" id="sc-a" hidden>
+              <p>“Would you like to play with us?”</p>
+              <span>Invite the person to join. A simple invitation can change their day.</span>
+            </div>
+          </article>
+
+          <article class="card scenario">
+            <span class="emoji" aria-hidden="true">📱</span>
+            <h3>A hurtful online message</h3>
+            <p>A class group shares a mean message about someone. What should you do?</p>
+            <button type="button" class="btn ghost" data-reveal="sc-b" aria-expanded="false">Show a safe answer</button>
+            <div class="reveal" id="sc-b" hidden>
+              <p>Do not forward it. Save evidence if it is safe and tell a trusted adult.</p>
+              <span>Do not send the message to other people. Ask an adult for help.</span>
+            </div>
+          </article>
+
+          <article class="card scenario">
+            <span class="emoji" aria-hidden="true">🍽️</span>
+            <h3>Left out at lunch</h3>
+            <p>You see a classmate eating alone. What can you do?</p>
+            <button type="button" class="btn ghost" data-reveal="sc-c" aria-expanded="false">Show an inclusive answer</button>
+            <div class="reveal" id="sc-c" hidden>
+              <p>“Come and sit with us!”</p>
+              <span>Offer a place at your table. Inclusion starts with a small gesture.</span>
+            </div>
+          </article>
+
+          <article class="card scenario">
+            <span class="emoji" aria-hidden="true">💭</span>
+            <h3>You made a mistake</h3>
+            <p>You said something unkind and your classmate feels sad. What can you say?</p>
+            <button type="button" class="btn ghost" data-reveal="sc-d" aria-expanded="false">Show an honest answer</button>
+            <div class="reveal" id="sc-d" hidden>
+              <p>“I am sorry. I will not say that again.”</p>
+              <span>Saying sorry and changing your behaviour is also a form of respect.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= 08 · ESCAPE ROOM ================= -->
+      <section class="panel" id="panel-escape" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">07 · Gamified resource</span>
+          <h2>Unlocking Respect · Escape Room</h2>
+          <p class="lead">Complete the five missions, win your badge and become a Respect Hero.</p>
+        </div>
+
+        <div class="mission-meta">
+          <span class="pill" id="mission-label">Mission 1 of 5</span>
+          <div class="dots" id="dots" aria-hidden="true"></div>
+        </div>
+
+        <div class="card game-card" id="game"></div>
+
+        <h3 class="mt-4">Canva resources</h3>
+        <p class="small">Open the original materials in a new window. Click here to view each design.</p>
+
+        <div class="canva-actions">
+          <a class="canva-action escape" href="https://canva.link/3mvj96y41ey4zm0" target="_blank" rel="noopener">
+            <span class="canva-ico" aria-hidden="true">🔐</span>
+            <span class="canva-copy">
+              <span class="canva-title">Unlocking Respect</span>
+              <span class="canva-sub">Escape Room · 5 missions</span>
+              <span class="canva-cta">Click here to view ↗</span>
+            </span>
+          </a>
+
+          <a class="canva-action tree" href="https://canva.link/h22u44lhh1knjg7" target="_blank" rel="noopener">
+            <span class="canva-ico" aria-hidden="true">🌳</span>
+            <span class="canva-copy">
+              <span class="canva-title">Problem Tree</span>
+              <span class="canva-sub">Cause and effect</span>
+              <span class="canva-cta">Click here to view ↗</span>
+            </span>
+          </a>
+        </div>
+
+        <p class="small mt-3">Interactive version adapted from the Phase 2/3 materials. Original resources in Canva.</p>
+      </section>
+
+      <!-- ================= 09 · AI TOOLS ================= -->
+      <section class="panel" id="panel-ia" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">08 · AI tools</span>
+          <h2>Two AI tools for learning</h2>
+          <p class="lead">Two tools to practise reading and speaking with your teacher's support.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card tool-card chatgpt">
+            <span class="pill">AI tool 1 · Reading</span>
+            <h3 class="mt-2">ChatGPT</h3>
+            <p>Helps simplify fictional situations, explain vocabulary and create A1-level comprehension questions.</p>
+            <p class="prompt"><b>Suggested prompt:</b> “Rewrite this fictional classroom situation in very simple A1 English. Use 40 words and add three comprehension questions.”</p>
+            <a class="btn" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT ↗</a>
+          </article>
+
+          <article class="card tool-card copilot">
+            <span class="pill">AI tool 2 · Speaking</span>
+            <h3 class="mt-2">Microsoft Copilot</h3>
+            <p>Supervised role-play to practise respectful expressions and short answers.</p>
+            <p class="prompt"><b>Suggested prompt:</b> “Act as a friendly English practice partner for an A1 learner. Practise a short dialogue about including a new classmate. Use simple language and give gentle corrections.”</p>
+            <a class="btn" href="https://copilot.microsoft.com/" target="_blank" rel="noopener">Open Copilot ↗</a>
+          </article>
+        </div>
+
+        <div class="key-message mt-3">
+          <span class="emoji" aria-hidden="true">🛡️</span>
+          <div>
+            <b>Safe use</b>
+            <span>The teacher checks accuracy, age suitability and bias in AI output. Students never type names, photos, voices or personal data. There is always an option without AI.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 10 · REFLECTION ================= -->
+      <section class="panel" id="panel-reflexion" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">09 · Reflection</span>
+          <h2>My promise, my exit ticket</h2>
+          <p class="lead">Think of one concrete action and write your promise for this week.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>My promise</h3>
+            <p>What can you do to make everyone feel included?</p>
+            <label class="field" for="reflect-input">Your idea in English (it can be short)</label>
+            <textarea id="reflect-input" rows="3" placeholder="I can invite everyone to play..."></textarea>
+            <div class="row-actions">
+              <button type="button" class="btn" id="reflect-save">Save my promise</button>
+            </div>
+            <p class="feedback" id="reflect-fb" aria-live="polite"></p>
+            <div class="saved-note" id="reflect-saved" hidden></div>
+          </div>
+
+          <div class="card">
+            <h3>Exit ticket 🎟️</h3>
+            <p>Choose one new word and one respectful action you will practise.</p>
+            <label class="field" for="ticket-word">New English word</label>
+            <input type="text" id="ticket-word" placeholder="respect" autocomplete="off">
+            <label class="field" for="ticket-action">One action I will practise</label>
+            <input type="text" id="ticket-action" placeholder="Invite a classmate to play" autocomplete="off">
+            <div class="row-actions">
+              <button type="button" class="btn" id="ticket-submit">Hand in my ticket</button>
+            </div>
+            <div id="ticket-out" hidden></div>
+          </div>
+        </div>
+
+        <div class="card inclusion-banner mt-3">
+          <img src="assets/inclusion.svg" alt="Illustration of a globe surrounded by hands of different skin tones and a heart." width="320" height="320" onerror="this.style.display='none';this.parentElement.classList.add('is-fallback');">
+          <div>
+            <h3>We are different, and we all deserve respect.</h3>
+            <p>Talk to your teacher or a trusted adult if something worries you.</p>
+            <p class="small">You can answer with a sentence, a drawing or an oral explanation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 11 · TEACHER NOTES ================= -->
+      <section class="panel" id="panel-docente" aria-hidden="true">
+        <div class="panel-head">
+          <span class="eyebrow">10 · Teacher notes</span>
+          <h2>Teacher notes and learning approach</h2>
+          <p class="lead">Pedagogical guidance to adapt this page to your primary school group.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Pedagogical approach</h3>
+            <p>This page connects English practice with the student's real context. It draws on the principles of the <b>post-method approach</b>: practical communication, participation and relevance.</p>
+            <p><b>Universal Design for Learning (UDL)</b> is reflected in short text, visual organisation, oral modelling, written or spoken answer options and constant teacher support.</p>
+          </article>
+
+          <article class="card">
+            <h3>Suggested assessment</h3>
+            <ul class="checklist">
+              <li>Reading comprehension in the short situations.</li>
+              <li>Choosing safe and respectful answers.</li>
+              <li>Use of the target vocabulary (respect, include, kind...).</li>
+              <li>One inclusive proposal, spoken or written.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Adaptations</h3>
+            <ul class="checklist">
+              <li>Adjust the length of the readings and the time for each activity.</li>
+              <li>Read out loud and allow spoken answers or drawings.</li>
+              <li>Use the browser audio or record your own voice.</li>
+              <li>Check the video and external links before class.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Privacy and safety</h3>
+            <p>No personal data is requested. Reflection and exit-ticket answers are saved only in the student's browser (localStorage).</p>
+            <p class="small">AI tools are used under supervision and always have a no-technology alternative.</p>
+          </article>
+        </div>
+
+        <div class="key-message mt-3">
+          <span class="emoji" aria-hidden="true">🍎</span>
+          <div>
+            <b>Note for the teacher</b>
+            <span>This prototype is support material. Adapt the examples, language level and scaffolds to the real needs of your class.</span>
+          </div>
+        </div>
+      </section>
+
+
+
+      <nav class="pager" id="pager" aria-label="Navigation between sections"></nav>
+
+      <footer class="site-footer">
+        <p><b>Respect Starts With Us</b> · Learn English, build inclusion.</p>
+        <p>Educational prototype for <b>Technology in Foreign Language Teaching</b> · UNAD, Phase 4.</p>
+        <p class="small">Content adapted for primary school students (Pre-A1 / A1). Visuals and images created for this project.</p>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+/* ===== Inlined from js/app.js ===== */
+/* =========================================================
+   RESPECT STARTS WITH US · Application
+   Updated 2026-11-21
+   Modular architecture:
+   1. Configuration and navigation
+   2. Audio and study guide
+   3. Interactive practice
+   4. Scenarios
+   5. Escape Room
+   6. Reflection and exit ticket
+   ========================================================= */
+(function () {
+  'use strict';
+
+  /* =======================================================
+     1. CONFIGURATION AND NAVIGATION
+     ======================================================= */
+
+  const SECTIONS = [
+    { id: 'inicio',     title: 'Home',           icon: '🏠', accent: 'blue'   },
+    { id: 'infografia', title: 'Infographic',    icon: '🛑', accent: 'orange' },
+    { id: 'mapa',       title: 'Mind Map',       icon: '🧠', accent: 'lilac'  },
+    { id: 'vio',        title: 'Video & audio',  icon: '🎧', accent: 'green'  },
+    { id: 'guia',       title: 'Study guide',    icon: '📚', accent: 'yellow' },
+    { id: 'practica',   title: 'Practice',       icon: '✏️', accent: 'blue'   },
+    { id: 'escenarios', title: 'Scenarios',      icon: '💬', accent: 'lilac'  },
+    { id: 'escape',     title: 'Escape Room',    icon: '🔐', accent: 'orange' },
+    { id: 'ia',         title: 'AI tools',       icon: '🤖', accent: 'green'  },
+    { id: 'reflexion',  title: 'Reflection',     icon: '🌟', accent: 'yellow' },
+    { id: 'docente',    title: 'Teachers',       icon: '🍎', accent: 'blue'   }
+  ];
+
+  const ACCENTS = {
+    blue:   { a: '#79aede', s: '#e6f2fb', i: '#2a5d86' },
+    orange: { a: '#eda172', s: '#ffeadd', i: '#9a5222' },
+    lilac:  { a: '#a48fdd', s: '#eee9fc', i: '#5b459e' },
+    green:  { a: '#78c29a', s: '#e2f5ea', i: '#2f6b4a' },
+    yellow: { a: '#f2c94c', s: '#fff4cf', i: '#8a6200' }
+  };
+
+  const STORAGE = {
+    visited: 'rsu2.visited',
+    speak: 'rsu2.speak',
+    reflect: 'rsu2.reflect'
+  };
+
+  const $ = (selector, root) => (root || document).querySelector(selector);
+  const $$ = (selector, root) => Array.from((root || document).querySelectorAll(selector));
+
+  const nav = $('#nav');
+  const pager = $('#pager');
+  const sidebar = $('#sidebar');
+  const scrim = $('#scrim');
+  const menuBtn = $('#menu-btn');
+  const topbarTitle = $('#topbar-title');
+
+  let visited = new Set(['inicio']);
+  let current = 'inicio';
+
+  /* Restore saved progress (if the browser allows it). */
+  try {
+    const raw = window.localStorage.getItem(STORAGE.visited);
+    if (raw) {
+      JSON.parse(raw).forEach(function (id) {
+        if (SECTIONS.some(function (s) { return s.id === id; })) visited.add(id);
+      });
+    }
+  } catch (err) {
+    /* localStorage not available: the page keeps working in memory. */
+  }
+
+  /* --- Navigation panel --- */
+  SECTIONS.forEach(function (section) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'nav-item';
+    button.dataset.target = section.id;
+    button.style.setProperty('--chip', ACCENTS[section.accent].s);
+    button.innerHTML =
+      '<span class="nav-ico" aria-hidden="true">' + section.icon + '</span>' +
+      '<span class="nav-label">' + section.title + '</span>';
+    button.addEventListener('click', function () { go(section.id); });
+    nav.appendChild(button);
+  });
+
+  /* --- Progress --- */
+  function updateProgress() {
+    const done = SECTIONS.filter(function (s) { return visited.has(s.id); }).length;
+    const pct = Math.round((done / SECTIONS.length) * 100);
+
+    const bar = $('#progress-bar');
+    const track = $('#progress-track');
+    const text = $('#progress-text');
+    const percent = $('#progress-percent');
+    const count = $('#progress-count');
+
+    if (bar) bar.style.width = pct + '%';
+    if (track) track.setAttribute('aria-valuenow', String(pct));
+    if (text) text.textContent = done + ' of ' + SECTIONS.length + ' sections';
+    if (percent) percent.textContent = pct + '%';
+    if (count) count.textContent = pct + '%';
+  }
+
+  /* --- Previous / next pager --- */
+  function renderPager(id) {
+    const index = SECTIONS.findIndex(function (s) { return s.id === id; });
+    const previous = SECTIONS[index - 1];
+    const next = SECTIONS[index + 1];
+
+    pager.innerHTML = '';
+
+    if (previous) {
+      const prevBtn = document.createElement('button');
+      prevBtn.type = 'button';
+      prevBtn.dataset.go = previous.id;
+      prevBtn.innerHTML = '<span aria-hidden="true">←</span> ' + previous.title;
+      pager.appendChild(prevBtn);
+    }
+
+    if (next) {
+      const nextBtn = document.createElement('button');
+      nextBtn.type = 'button';
+      nextBtn.dataset.go = next.id;
+      nextBtn.className = 'next';
+      nextBtn.innerHTML = next.title + ' <span aria-hidden="true">→</span>';
+      pager.appendChild(nextBtn);
+    }
+  }
+
+  /* --- Section change (core of the modular architecture) --- */
+  function go(id, options) {
+    const opts = options || {};
+    const section = SECTIONS.find(function (s) { return s.id === id; }) || SECTIONS[0];
+    id = section.id;
+    current = id;
+
+    $$('.panel').forEach(function (panel) {
+      const isActive = panel.id === 'panel-' + id;
+      panel.classList.toggle('is-active', isActive);
+      panel.setAttribute('aria-hidden', String(!isActive));
+    });
+
+    const accent = ACCENTS[section.accent] || ACCENTS.blue;
+    document.documentElement.style.setProperty('--accent', accent.a);
+    document.documentElement.style.setProperty('--accent-soft', accent.s);
+    document.documentElement.style.setProperty('--accent-ink', accent.i);
+
+    $$('.nav-item', nav).forEach(function (button) {
+      const isCurrent = button.dataset.target === id;
+      button.classList.toggle('is-current', isCurrent);
+      if (isCurrent) {
+        button.setAttribute('aria-current', 'page');
+      } else {
+        button.removeAttribute('aria-current');
+      }
+    });
+
+    topbarTitle.textContent = section.title;
+    renderPager(id);
+
+    if (!visited.has(id)) {
+      visited.add(id);
+      try {
+        window.localStorage.setItem(STORAGE.visited, JSON.stringify(Array.from(visited)));
+      } catch (err) { /* no storage */ }
+    }
+    updateProgress();
+
+    document.title = section.title + ' · Respect Starts With Us';
+
+    if (opts.hash !== false) {
+      try {
+        window.history.pushState({ id: id }, '', '#' + id);
+      } catch (err) {
+        /* file:// may block pushState; navigation still works. */
+      }
+    }
+
+    if (opts.scroll !== false) {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    closeDrawer();
+
+    const heading = $('#panel-' + id + ' h1, #panel-' + id + ' h2');
+    if (heading) {
+      heading.setAttribute('tabindex', '-1');
+      try { heading.focus({ preventScroll: true }); } catch (err) { heading.focus(); }
+    }
+  }
+
+  /* --- Mobile side menu --- */
+  function openDrawer() {
+    sidebar.classList.add('is-open');
+    scrim.classList.add('is-on');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    sidebar.scrollTop = 0;
+  }
+
+  function closeDrawer() {
+    sidebar.classList.remove('is-open');
+    scrim.classList.remove('is-on');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn.addEventListener('click', function () {
+    if (sidebar.classList.contains('is-open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  scrim.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeDrawer();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 1080) closeDrawer();
+  });
+
+  /* --- Buttons with data-go (hero, pager, escape...) --- */
+  document.addEventListener('click', function (event) {
+    const trigger = event.target.closest('[data-go]');
+    if (!trigger) return;
+    event.preventDefault();
+    go(trigger.dataset.go);
+  });
+
+  /* --- Browser history --- */
+  window.addEventListener('popstate', function () {
+    const id = window.location.hash.replace('#', '');
+    if (SECTIONS.some(function (s) { return s.id === id; })) {
+      go(id, { hash: false, scroll: false });
+    }
+  });
+
+  /* =======================================================
+     2. AUDIO AND STUDY GUIDE
+     ======================================================= */
+
+  function speak(text, rate) {
+    if (!('speechSynthesis' in window)) {
+      window.alert(text);
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = rate || 0.85;
+    utterance.pitch = 1.05;
+    window.speechSynthesis.speak(utterance);
+  }
+
+  $$('[data-speak]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      speak(button.dataset.speak, parseFloat(button.dataset.rate || '0.85'));
+    });
+  });
+
+  $$('[data-stop-speak]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    });
+  });
+
+  /* --- Flip cards --- */
+  $$('.flashcard').forEach(function (card) {
+    const front = $('.fc-front', card);
+    const back = $('.fc-back', card);
+    if (front && back) {
+      const word = front.firstChild ? front.firstChild.textContent.trim() : front.textContent.trim();
+      const meaning = back.firstChild ? back.firstChild.textContent.trim() : back.textContent.trim();
+      card.setAttribute('aria-label', word + ': ' + meaning);
+    }
+    card.addEventListener('click', function () {
+      const flipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed', String(flipped));
+    });
+  });
+
+  /* --- Interactive mind map --- */
+  const MAP = {
+    empathy: {
+      icon: '💗',
+      title: 'Empathy',
+      idea: 'I understand how you feel.',
+      example: '“Are you okay? Do you want to talk?”'
+    },
+    diversity: {
+      icon: '🌍',
+      title: 'Diversity',
+      idea: 'We are all different.',
+      example: '“Our differences make us special.”'
+    },
+    equality: {
+      icon: '⚖️',
+      title: 'Equality',
+      idea: 'Everyone has the same value.',
+      example: '“Everyone deserves the same opportunities.”'
+    },
+    safe: {
+      icon: '💬',
+      title: 'Safe communication',
+      idea: 'Use kind words online and offline.',
+      example: '“Think before you send a message.”'
+    },
+    help: {
+      icon: '🤝',
+      title: 'Help-seeking',
+      idea: 'Ask a trusted adult for help.',
+      example: '“Can you help me, please?”'
+    }
+  };
+
+  const mapDetail = $('#map-detail');
+
+  function showMap(key) {
+    const data = MAP[key];
+    if (!data || !mapDetail) return;
+
+    mapDetail.innerHTML =
+      '<span class="map-icon" aria-hidden="true">' + data.icon + '</span>' +
+      '<div>' +
+        '<h3>' + data.title + '</h3>' +
+        '<p><b>' + data.idea + '</b></p>' +
+        '<p class="example">' + data.example + '</p>' +
+      '</div>';
+
+    $$('.map-node').forEach(function (node) {
+      node.classList.toggle('is-active', node.dataset.map === key);
+    });
+  }
+
+  $$('.map-node').forEach(function (node) {
+    node.addEventListener('click', function () { showMap(node.dataset.map); });
+  });
+  showMap('empathy');
+
+  /* --- Show / hide reading answers --- */
+  $$('[data-toggle]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const target = document.getElementById(button.dataset.toggle);
+      if (!target) return;
+      const opening = target.hidden;
+      target.hidden = !opening;
+      button.setAttribute('aria-expanded', String(opening));
+      button.textContent = opening ? 'Hide answers' : 'Show questions and answers';
+    });
+  });
+
+  /* --- Model sentences that travel to the practice section --- */
+  $$('[data-frame]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const textarea = $('#speak');
+      if (!textarea) return;
+      textarea.value = button.dataset.frame;
+      go('practica');
+      window.setTimeout(function () {
+        textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        try { textarea.focus({ preventScroll: true }); } catch (err) { textarea.focus(); }
+      }, 280);
+    });
+  });
+
+  /* =======================================================
+     3. INTERACTIVE PRACTICE
+     ======================================================= */
+
+  const QUIZ = [
+    {
+      id: 'q1',
+      text: 'A student laughs at another student’s accent every day. What is happening?',
+      options: ['Kindness', 'Bullying', 'Sharing'],
+      correct: 1,
+      why: 'Laughing at someone every day is repeated hurtful behaviour.'
+    },
+    {
+      id: 'q2',
+      text: 'A classmate is alone at break. What is a respectful action?',
+      options: ['Invite them to join', 'Laugh at them', 'Ignore them'],
+      correct: 0,
+      why: 'Inviting the person to join shows inclusion and respect.'
+    },
+    {
+      id: 'q3',
+      text: 'You receive a hurtful message about someone. What should you do?',
+      options: ['Share it', 'Add an insult', 'Do not share it and tell a trusted adult'],
+      correct: 2,
+      why: 'Do not spread hurtful messages. Tell a trusted adult.'
+    }
+  ];
+
+  const quizList = $('#quiz-list');
+  const quizScore = $('#quiz-score');
+  const quizDone = $('#quiz-done');
+  const solved = new Set();
+
+  function updateScore() {
+    if (quizScore) quizScore.textContent = solved.size + ' / ' + QUIZ.length + ' correct';
+    if (quizDone) {
+      quizDone.textContent = solved.size === QUIZ.length
+        ? 'Excellent! You finished the practice. Now try saying your own sentence out loud. 🌟'
+        : '';
+    }
+  }
+
+  function renderQuiz() {
+    if (!quizList) return;
+    solved.clear();
+    quizList.innerHTML = '';
+
+    QUIZ.forEach(function (question, index) {
+      const card = document.createElement('article');
+      card.className = 'card question';
+      card.innerHTML =
+        '<div class="q-head">' +
+          '<span class="q-num" aria-hidden="true">' + (index + 1) + '</span>' +
+          '<h3>' + question.text + '</h3>' +
+        '</div>' +
+        '<div class="options" role="group" aria-label="Options for question ' + (index + 1) + '"></div>' +
+        '<p class="feedback" aria-live="polite"></p>';
+
+      const optionsBox = $('.options', card);
+      const feedback = $('.feedback', card);
+
+      question.options.forEach(function (option, optionIndex) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'option';
+        button.innerHTML =
+          '<span class="key" aria-hidden="true">' + 'ABC'[optionIndex] + '</span>' +
+          '<span>' + option + '</span>';
+
+        button.addEventListener('click', function () {
+          if (solved.has(question.id)) return;
+
+          if (optionIndex === question.correct) {
+            button.classList.add('correct');
+            $$('.option', optionsBox).forEach(function (item) { item.disabled = true; });
+            feedback.className = 'feedback ok';
+            feedback.textContent = '✓ Correct! ' + question.why;
+            solved.add(question.id);
+            updateScore();
+          } else {
+            button.classList.add('wrong');
+            feedback.className = 'feedback no';
+            feedback.textContent = 'Try again. Think about respect and safety.';
+          }
+        });
+
+        optionsBox.appendChild(button);
+      });
+
+      quizList.appendChild(card);
+    });
+
+    updateScore();
+  }
+
+  renderQuiz();
+
+  const quizReset = $('#quiz-reset');
+  if (quizReset) {
+    quizReset.addEventListener('click', function () {
+      renderQuiz();
+      quizList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  /* --- Speaking --- */
+  const speakInput = $('#speak');
+  const speakFeedback = $('#speak-fb');
+
+  try {
+    const savedSpeak = window.localStorage.getItem(STORAGE.speak);
+    if (savedSpeak && speakInput) speakInput.value = savedSpeak;
+  } catch (err) { /* no storage */ }
+
+  const speakSave = $('#speak-save');
+  if (speakSave) {
+    speakSave.addEventListener('click', function () {
+      const value = speakInput.value.trim();
+      if (!value) {
+        speakFeedback.className = 'feedback no';
+        speakFeedback.textContent = 'Write your sentence first. ✍️';
+        speakInput.focus();
+        return;
+      }
+      try { window.localStorage.setItem(STORAGE.speak, value); } catch (err) { /* no storage */ }
+      speakFeedback.className = 'feedback ok';
+      speakFeedback.textContent = 'Great job! Now read it out loud. 🌟';
+    });
+  }
+
+  const speakExample = $('#speak-example');
+  if (speakExample) {
+    speakExample.addEventListener('click', function () {
+      speakInput.value = 'We should invite everyone because we are all equal.';
+      speakFeedback.className = 'feedback';
+      speakFeedback.textContent = 'This is an example. Now write your own idea. ✨';
+      speakInput.focus();
+    });
+  }
+
+  /* =======================================================
+     4. SCENARIOS
+     ======================================================= */
+
+  $$('[data-reveal]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const box = document.getElementById(button.dataset.reveal);
+      if (!box) return;
+      const opening = box.hidden;
+      box.hidden = !opening;
+      button.setAttribute('aria-expanded', String(opening));
+      if (!button.dataset.label) button.dataset.label = button.textContent;
+      button.textContent = opening ? 'Hide answer' : button.dataset.label;
+    });
+  });
+
+  /* =======================================================
+     5. ESCAPE ROOM
+     ======================================================= */
+
+  const MISSIONS = [
+    {
+      title: 'The Respect Code',
+      q: 'What action shows respect?',
+      options: ['Laugh at a classmate', 'Help a classmate', 'Ignore a classmate'],
+      correct: 1,
+      why: 'Helping others shows respect.'
+    },
+    {
+      title: 'The Diversity Museum',
+      q: 'All children deserve ____.',
+      options: ['Respect', 'Fear', 'Bullying'],
+      correct: 0,
+      why: 'Everyone deserves respect.'
+    },
+    {
+      title: 'Stop Bullying',
+      q: 'You see a student being bullied. What can you do?',
+      options: ['Laugh', 'Join in', 'Help and tell a teacher'],
+      correct: 2,
+      why: 'Support the student and ask a trusted adult for help.'
+    },
+    {
+      title: 'Cyber Respect',
+      q: 'You receive a mean message. What is safest?',
+      options: ['Share it', 'Write an insult', 'Do not share it; tell a trusted adult'],
+      correct: 2,
+      why: 'Do not spread hurtful messages.'
+    },
+    {
+      title: 'The Inclusion Mission',
+      q: 'We are different, but we are all ____.',
+      options: ['Enemies', 'Equal', 'Alone'],
+      correct: 1,
+      why: 'We all have equal value.'
+    }
+  ];
+
+  const game = $('#game');
+  const dots = $('#dots');
+  const missionLabel = $('#mission-label');
+  let missionIndex = 0;
+
+  function renderDots() {
+    if (!dots) return;
+    dots.innerHTML = '';
+    MISSIONS.forEach(function (mission, index) {
+      const dot = document.createElement('span');
+      dot.className = 'dot' +
+        (index < missionIndex ? ' done' : '') +
+        (index === missionIndex ? ' now' : '');
+      dot.textContent = index < missionIndex ? '✓' : String(index + 1);
+      dots.appendChild(dot);
+    });
+  }
+
+  function renderMission() {
+    if (!game) return;
+
+    if (missionIndex >= MISSIONS.length) {
+      renderFinish();
+      return;
+    }
+
+    const mission = MISSIONS[missionIndex];
+    if (missionLabel) {
+      missionLabel.textContent = 'Mission ' + (missionIndex + 1) + ' of ' + MISSIONS.length;
+    }
+    renderDots();
+
+    game.dataset.locked = '0';
+    game.innerHTML =
+      '<h3>' + mission.title + '</h3>' +
+      '<p class="mission-q">' + mission.q + '</p>' +
+      '<div class="options" id="mission-options"></div>' +
+      '<p class="feedback" id="mission-fb" aria-live="polite"></p>' +
+      '<div class="mission-actions">' +
+        '<button type="button" class="btn" id="mission-next" hidden>' +
+          (missionIndex === MISSIONS.length - 1 ? 'See my badge 🏅' : 'Next mission →') +
+        '</button>' +
+      '</div>';
+
+    const optionsBox = $('#mission-options');
+    const feedback = $('#mission-fb');
+    const nextButton = $('#mission-next');
+
+    mission.options.forEach(function (option, optionIndex) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'option';
+      button.innerHTML =
+        '<span class="key" aria-hidden="true">' + 'ABC'[optionIndex] + '</span>' +
+        '<span>' + option + '</span>';
+
+      button.addEventListener('click', function () {
+        if (game.dataset.locked === '1') return;
+
+        if (optionIndex === mission.correct) {
+          game.dataset.locked = '1';
+          button.classList.add('correct');
+          $$('.option', optionsBox).forEach(function (item) { item.disabled = true; });
+          feedback.className = 'feedback ok';
+          feedback.textContent = '✓ ' + mission.why;
+          nextButton.hidden = false;
+          nextButton.focus();
+        } else {
+          button.classList.add('wrong');
+          feedback.className = 'feedback no';
+          feedback.textContent = 'Not yet. Try another answer.';
+        }
+      });
+
+      optionsBox.appendChild(button);
+    });
+
+    nextButton.addEventListener('click', function () {
+      missionIndex += 1;
+      renderMission();
+    });
+  }
+
+  function renderFinish() {
+    if (!game) return;
+    renderDots();
+    if (missionLabel) missionLabel.textContent = 'Completed!';
+
+    game.dataset.locked = '1';
+    game.innerHTML =
+      '<div class="finish">' +
+        '<div class="badge" aria-hidden="true">🏅</div>' +
+        '<h3>Mission completed!</h3>' +
+        '<p>You are a <b>Respect Hero</b>. Be kind, include everyone and stop bullying.</p>' +
+        '<p class="small">You finished all five missions! You can play again or continue to the reflection.</p>' +
+        '<div class="row-actions" style="justify-content:center">' +
+          '<button type="button" class="btn" id="again">Play again</button>' +
+          '<button type="button" class="btn ghost" data-go="reflexion">Go to the reflection →</button>' +
+        '</div>' +
+      '</div>';
+
+    const again = $('#again');
+    if (again) {
+      again.addEventListener('click', function () {
+        missionIndex = 0;
+        renderMission();
+      });
+    }
+  }
+
+  renderMission();
+
+  /* =======================================================
+     6. REFLECTION AND EXIT TICKET
+     ======================================================= */
+
+  const reflectInput = $('#reflect-input');
+  const reflectFeedback = $('#reflect-fb');
+  const reflectSaved = $('#reflect-saved');
+
+  try {
+    const savedReflection = window.localStorage.getItem(STORAGE.reflect);
+    if (savedReflection && reflectInput) {
+      reflectInput.value = savedReflection;
+      if (reflectSaved) {
+        reflectSaved.textContent = '“' + savedReflection + '”';
+        reflectSaved.hidden = false;
+      }
+    }
+  } catch (err) { /* no storage */ }
+
+  const reflectSave = $('#reflect-save');
+  if (reflectSave) {
+    reflectSave.addEventListener('click', function () {
+      const value = reflectInput.value.trim();
+      if (!value) {
+        reflectFeedback.className = 'feedback no';
+        reflectFeedback.textContent = 'Write an idea before saving. 💛';
+        reflectInput.focus();
+        return;
+      }
+      try { window.localStorage.setItem(STORAGE.reflect, value); } catch (err) { /* no storage */ }
+      reflectSaved.textContent = '“' + value + '”';
+      reflectSaved.hidden = false;
+      reflectFeedback.className = 'feedback ok';
+      reflectFeedback.textContent = 'Saved! Your promise matters. 🌟';
+    });
+  }
+
+  function escapeHtml(value) {
+    return value.replace(/[&<>"']/g, function (character) {
+      return {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[character];
+    });
+  }
+
+  const ticketSubmit = $('#ticket-submit');
+  if (ticketSubmit) {
+    ticketSubmit.addEventListener('click', function () {
+      const word = $('#ticket-word').value.trim();
+      const action = $('#ticket-action').value.trim();
+      const output = $('#ticket-out');
+
+      if (!word || !action) {
+        output.hidden = false;
+        output.className = 'ticket-result ticket-warn';
+        output.innerHTML = '<p>Please complete both boxes. ✍️</p>';
+        return;
+      }
+
+      output.hidden = false;
+      output.className = 'ticket-result';
+      output.innerHTML =
+        '<h4>🎟️ Your exit ticket</h4>' +
+        '<p><b>New word:</b> ' + escapeHtml(word) + '</p>' +
+        '<p><b>My action:</b> ' + escapeHtml(action) + '</p>' +
+        '<p class="small">Show it to your teacher. Well done!</p>';
+    });
+  }
+
+  /* =======================================================
+     START
+     ======================================================= */
+
+  const initialId = window.location.hash.replace('#', '');
+  const startId = SECTIONS.some(function (s) { return s.id === initialId; })
+    ? initialId
+    : 'inicio';
+
+  go(startId, { hash: false, scroll: false });
+})();
+
+</script>
+</body>
+</html>
